@@ -1,7 +1,7 @@
-export const registerPage = () => {
+export const register = () => {
   const containerCreateUser = document.createElement("section");
   containerCreateUser.className = "view-container";
-  const registerPage = `
+  const register = `
     <header>
     </header>
     <div class="register-container">
