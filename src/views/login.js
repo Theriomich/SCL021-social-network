@@ -1,10 +1,12 @@
-import { routes } from "./routes.js";
+import { userLogin, loginWithGoogle } from "../lib/firebase.js";
+/*import { routes } from "./routes.js";
 import { register } from "./register.js";
-import { welcome } from "./welcome.js";
+import { welcome } from "./welcome.js";*/
 
 
-export const login = () => {
-    const containerLogin = document.createElement("section");
+export const login = () => 
+  {
+  const containerLogin = document.createElement("section");
     containerLogin.className = "view-container";
     const viewLogin = `
     <header>
