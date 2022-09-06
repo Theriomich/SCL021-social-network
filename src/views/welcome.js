@@ -42,45 +42,66 @@ export const welcomePage = () => {
         <div class="parrafo1">Bienvenidos a Social Tech, una red social de tecnología que busca la conectividad entre personas de distintas partes del mundo.</div>
         <div class="containerScroll">
           <img src="utilitys/img/scroll1.png" alt="Scroll" />
+        </div>  
+        <div id="containerAllCarrusel">
+        <div class="containerCarrusel" id="itemCarrusel1">
+          <div class="imgCarrusel" id="img1">
+    
+    
+    
+          </div>
+    
+          <div class="arrowsCarrusel">
+            <a href="#itemCarrusel3">
+              <i class="fa-solid fa-chevron-left"></i>
+              <a href="#itemCarrusel2">
+                <i class="fa-solid fa-chevron-right"></i>
+          </div>
+    
         </div>
-        <div id="carousel-example" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example" data-slide-to="1"></li>
-    <li data-target="#carousel-example" data-slide-to="2"></li>
-  </ol>
-
-  <div class="carousel-inner">
-    <div class="item active">
-      <a href="#"><img src="utilitys/img/scroll1.png" alt="Scroll" /></a>
-      <div class="carousel-caption">
-        <h3>Meow</h3>
-        <p>Just Kitten Around</p>
+    
+        <div class="containerCarrusel" id="itemCarrusel2">
+          <div class="imgCarrusel" id="img2">
+            <h3>Comparte contenido, agrega amigos, postea y busca tips sobre tecnología</h3>
+    
+          </div>
+    
+          <div class="arrowsCarrusel">
+            <a href="#itemCarrusel1">
+              <i class="fa-solid fa-chevron-left"></i>
+              <a href="#itemCarrusel3">
+                <i class="fa-solid fa-chevron-right"></i>
+          </div>
+    
+        </div>
+    
+        <div class="containerCarrusel" id="itemCarrusel3">
+          <div class="imgCarrusel" id="img3">
+            <h3> Sencillez y facilidad para todo tipo de dispositivos. Para usarla en todo momento y en todo lugar </h3>
+    
+          </div>
+    
+          <div class="arrowsCarrusel">
+            <a href="#itemCarrusel2">
+              <i class="fa-solid fa-chevron-left"></i>
+              <a href="#itemCarrusel1">
+                <i class="fa-solid fa-chevron-right"></i>
+          </div>
+    
+        </div>
+    
+    
+    
+    
+    
       </div>
-    </div>
-    <div class="item">
-      <a href="#"><img src="src/utilitys/img/friendspc.jpg" /></a>
-      <div class="carousel-caption">
-        <h3>Meow</h3>
-        <p>Just Kitten Around</p>
-      </div>
-    </div>
-    <div class="item">
-      <a href="#"><img src="src/utilitys/img/res_4013728_young_people_mobile.jpg" /></a>
-      <div class="carousel-caption">
-        <h3>Meow</h3>
-        <p>Just Kitten Around</p>
-      </div>
-    </div>
-  </div>
-
-  <a class="left carousel-control" href="#carousel-example" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div>
+    
+      <div id="containerPoint">
+        <a href="#itemCarrusel1"><b>°</b></a>
+        <a href="#itemCarrusel2"><b>°</b></a>
+        <a href="#itemCarrusel3"><b>°</b></a>
+    
+      </div>      
         <div class="parrafo2">Nuestra meta es dar a conocer avances tecnologícos, programas para el uso profesional o recreativo y nuevos dispositivos para mejorar la calidad de vida y el funcionamiento de la sociedad, para que puedan compartir y conocer nuevas tecnologías de interés común.</div>
         <div class="buttonCover">
           <!--button type="button" class="button" id="Inicio">¡Quiero Ingresar!</button-->
@@ -88,5 +109,5 @@ export const welcomePage = () => {
         </div>
       </div>  `;
   containerwelcome.innerHTML = viewwelcome;
-    return containerwelcome;
+  return containerwelcome;
 };
