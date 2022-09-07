@@ -4,34 +4,32 @@ export const welcomePage = () => {
   const containerwelcome = document.createElement('section');
   containerwelcome.className = 'welcome';
   const viewwelcome = `
+ 
       <div class="containerWelcome">
+      <header>
+      <div class="containerHeader">
+        <h1>Technology Red Social</h1>
+      </div>
+    </header>
         <div class="parrafo1">Bienvenidos a Social Tech, una red social de tecnología que busca la conectividad entre personas de distintas partes del mundo.</div>
-        <!--<div class="containerScroll">
-          <img src="utilitys/img/scroll1.png" alt="Scroll" />
-        </div-->  
-        <base href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/">
+         
+        <base href="utilitys/img">
         <div id="captioned-gallery">
           <figure class="slider">
             <figure>
-              <img src="hobbiton-lake.jpg" alt>
-              <figcaption>Hobbiton, New Zealand</figcaption>
+              <img src="/utilitys/img/960x0.jpg" alt="technology"
+              <figcaption>Techonolgy in the World</figcaption>
             </figure>
             <figure>
-              <img src="wanaka-drowned-tree.jpg" alt>
-              <figcaption>Wanaka, New Zealand</figcaption>
+              <img src="/utilitys/img/friendspc.png" alt="friends"
+              <figcaption>Comparte contenido, agrega amigos, postea y busca tips sobre tecnología</figcaption>
+              <p class="imageP">Comparte contenido, agrega amigos, postea y busca tips sobre tecnología<p>
             </figure>
             <figure>
-              <img src="utah-peak.jpg" alt>
+              <img src="/utilitys/img/friendsCel.jpg" alt="friendscel"
               <figcaption>Utah, United States</figcaption>
-            </figure>
-            <figure>
-              <img src="bryce-canyon-utah.jpg" alt>
-              <figcaption>Bryce Canyon, Utah, United States</figcaption>
-            </figure>
-            <figure>
-              <img src="hobbiton-lake.jpg" alt>
-              <figcaption>Hobbiton, New Zealand</figcaption>
-            </figure>
+            </figure>         
+            
           </figure>
         </div>
         
