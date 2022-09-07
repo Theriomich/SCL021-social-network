@@ -14,4 +14,4 @@ window.addEventListener("hashchange", () => {
   observer();
 });*/
 
-document.getElementById("root").innerHTML = welcomePage;
+document.getElementById("root").appendChild(welcomePage()); 
