@@ -40,10 +40,10 @@ export const welcomePage = () => {
   const viewwelcome = `
       <div class="containerWelcome">
         <div class="parrafo1">Bienvenidos a Social Tech, una red social de tecnología que busca la conectividad entre personas de distintas partes del mundo.</div>
-        <div class="containerScroll">
+        <!--<div class="containerScroll">
           <img src="utilitys/img/scroll1.png" alt="Scroll" />
-        </div>  
-        <div id="containerAllCarrusel">
+        </div-->  
+        <<div id="containerAllCarrusel">
         <div class="containerCarrusel" id="itemCarrusel1">
           <div class="imgCarrusel" id="img1">
     
@@ -101,7 +101,7 @@ export const welcomePage = () => {
         <a href="#itemCarrusel2"><b>°</b></a>
         <a href="#itemCarrusel3"><b>°</b></a>
     
-      </div>      
+      </div> 
         <div class="parrafo2">Nuestra meta es dar a conocer avances tecnologícos, programas para el uso profesional o recreativo y nuevos dispositivos para mejorar la calidad de vida y el funcionamiento de la sociedad, para que puedan compartir y conocer nuevas tecnologías de interés común.</div>
         <div class="buttonCover">
           <!--button type="button" class="button" id="Inicio">¡Quiero Ingresar!</button-->
@@ -109,5 +109,5 @@ export const welcomePage = () => {
         </div>
       </div>  `;
   containerwelcome.innerHTML = viewwelcome;
-  return containerwelcome;
+    return containerwelcome;
 };

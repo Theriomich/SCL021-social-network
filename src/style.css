@@ -140,21 +140,20 @@
 }
 
 .containerCarrusel {
-
   height: 200px;
-  position: relative
+  position: relative;
+  justify-content: center;
+  
 }
-
 .imgCarrusel {
-
   height: 100%;
-
-
+  font-size: 15px;
+  color: rgb(17, 25, 70);
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
 }
 
 .arrowsCarrusel {
-
-
   height: 100%;
   width: 100%;
   top: 0;
@@ -166,11 +165,9 @@
 }
 
 #containerAllCarrusel {
-
   height: 200px;
   overflow: hidden;
-
-}
+  }
 
 #img1 {
   background-image: url("utilitys/img/scroll1.png");
@@ -179,13 +176,15 @@
 }
 
 #img2 {
-
   background-image: url("utilitys/img/friendspc.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #img3 {
-
-  background-image: url("utilitys/img/scroll2.jpg");
+  background-image: url("utilitys/img/scroll2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 a {
@@ -193,7 +192,6 @@ a {
 }
 
 i {
-
   color: aliceblue;
 }
 
@@ -202,7 +200,6 @@ i {
   border: aliceblue;
   display: flex;
   justify-content: space-evenly;
-
 }
 
 #containerPoint>a {
@@ -214,4 +211,8 @@ i {
 img {
   height: 100%;
   width: 100%;
+}
+.h3 {
+  font-size: 20px;
+  color: azure;
 }
