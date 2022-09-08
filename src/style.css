@@ -24,9 +24,9 @@
   display: flex;
   color: aliceblue;
   text-align: center;
-  /* justify-content: center;*/
+  justify-content: center;
   /* margin-left: 20%; */
-  /*margin-top: 5%;*/
+  margin-bottom: 2%;
 
 }
 
@@ -34,7 +34,6 @@
   width: 100%;
   height: 100%;
   display: flex;
-
 }
 
 .containerScroll {
@@ -60,14 +59,14 @@
   background-attachment: fixed;
   @import url('http://fonts.cdnfonts.com/css/astrolyte');
   font-family: 'Astrolyte', sans-serif;
-  font-size: 80px;
+  font-size: 65px;
   text-shadow: 0 0 30px #fff;
-
-}
+ }
 
 .parrafo1 {
-  font-size: 30px;
+  font-size: 20px;
   color: azure;
+  
   /*
     font-family: Verdana, sans-serif;
     color: #003a70;
@@ -79,7 +78,7 @@
 }
 
 .parrafo2 {
-  font-size: 30px;
+  font-size: 20px;
   color: azure;
   /*
     font-family: Verdana, sans-serif;
@@ -173,98 +172,57 @@
   margin: 1rem;
 }
 
-
-
+/*********************CARRUSEL*****************************************************/
 @import url(https://fonts.googleapis.com/css?family=Istok+Web);
-
 @keyframes slidy {
-
-  0% {
-    left: 0%;
-  }
-
-  20% {
-    left: 0%;
-  }
-
-  25% {
-    left: -100%;
-  }
-
-  45% {
-    left: -100%;
-  }
-
-  50% {
-    left: -200%;
-  }
-
-  70% {
-    left: -200%;
-  }
-
-  75% {
-    left: -300%;
-  }
-
-  95% {
-    left: -300%;
-  }
-
-  100% {
-    left: -400%;
-  }
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
 }
-
 * {
   box-sizing: border-box;
 }
-
-body,
-figure {
-  margin: 0;
-  align-content: center;
+body, figure { 
+  margin: 0; /*background: #101010;*/
   font-family: Istok Web, sans-serif;
   font-weight: 100;
+  align-content: center;
 }
-
-div#captioned-gallery {
-  width: 100%;
-  overflow: hidden;
+div#captioned-gallery { 
+  width: 100%; 
+  overflow: hidden; 
   text-align: center;
 }
-
-figure.slider {
-  position: relative;
-  width: 500%;
-  font-size: 0;
-  animation: 30s slidy infinite;
+figure.slider { 
+  position: relative; width: 500%;
+  font-size: 0; animation: 20s slidy infinite; 
 }
-
-figure.slider figure {
-  width: 20%;
-  height: auto;
-  display: inline-block;
-  position: inherit;
+figure.slider figure { 
+  width: 20%; height: auto;
+  display: inline-block;  position: inherit; 
+  
 }
-
-figure.slider img {
-  width: 50%;
+figure.slider img { 
+  width: 30%; 
   height: auto;
   border-radius: 20px;
+  object-fit: cover;
+  align-items: stretch;
 }
-
-figure.slider figure figcaption {
-  position: absolute;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-  color: #fff;
-  width: 100%;
-  font-size: 2rem;
-  padding: .6rem;
+figure.slider figure figcaption { 
+  position: absolute; bottom: 0;
+  /*background: rgba(0,0,0,0.4);*/
+  color: #fff; width: 100%;
+  font-size: 1rem; padding: .5rem; 
+  /*background-color: rgba(255, 255, 255, 0.7);*/
+  align-content: center;
+  text-shadow: 0 0 30px rgba(7, 11, 248, 0.534);
+  
 }
-
-.imageP {
-  color: azure;
-  position: absolute;
-}
+/*********************CARRUSEL*****************************************************/

@@ -1,4 +1,4 @@
-export const register = () => {
+export const registerPage = () => {
   const containerCreateUser = document.createElement("section");
   containerCreateUser.className = "view-container";
   const register = `
@@ -40,4 +40,7 @@ export const register = () => {
       />
         <button class="register-btn-inner" id="signup" type="submit">Regístrate</button>
       </div>`;
-};
+      containerCreateUser.innerHTML = register;
+      return containerCreateUser;
+    };
+
