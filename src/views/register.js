@@ -1,13 +1,17 @@
 export const registerPage = () => {
   const containerCreateUser = document.createElement("section");
-  containerCreateUser.className = "view-container";
-  const register = `
-    <header>
-    </header>
+  containerCreateUser.className = "register";
+  const viewRegister = `
+  <div class="containerPages">
+  <header>
+    <div class="containerHeader">
+      <h1>Technology  Red Social</h1>
+    </div>
+  </header>
     <div class="register-container">
-      <div class="login-inputs">
-        <h3 class="login-title">Únete a Technology Red Social </h3>
-        <input class="user-name"  
+      <section class = "containerLogin">
+        <h3 class="login-title">Unete a la red que te mantendra al  día con los mejores Tips de Tecnologia. </h3>
+        <input class="Inputs-L"  
         id="userSignUp" 
         type="text" 
         placeholder="Ingresa tu usuario"
@@ -15,7 +19,7 @@ export const registerPage = () => {
         autocomplete="on">
         </input>
         <input
-          class="user-input"
+          class="Inputs-L"
           id="emailSignUp"
           type="email"
           placeholder="Ingresa tu correo"
@@ -23,7 +27,7 @@ export const registerPage = () => {
           autocomplete="on"
         />
         <input
-          class="user-password"
+          class="Inputs-L"
           id="passwordSignUp"
           type="password"
           placeholder="Ingresa tu contraseña"
@@ -31,16 +35,18 @@ export const registerPage = () => {
           autocomplete="current-password"
         />
         <input
-        class="user-password"
+        class="Inputs-L"
         id="passwordValidate"
         type="password"
         placeholder="Repite tu contraseña"
         maxlength="10"
         autocomplete="current-password"
       />
-        <button class="register-btn-inner" id="signup" type="submit">Regístrate</button>
-      </div>`;
-      containerCreateUser.innerHTML = register;
+        <button class="Button" id="signup" type="submit">Regístrate</button>
+      </section>
+	 </div>
+</div> `;
+      containerCreateUser.innerHTML = viewRegister;
       return containerCreateUser;
     };
 
