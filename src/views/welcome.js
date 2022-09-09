@@ -17,7 +17,7 @@ export const welcomePage = () => {
         <div id="captioned-gallery">
           <figure class="slider">
             <figure>
-              <img src="/utilitys/img/960x0.jpg" alt="technology"
+              <img src="/utilitys/img/960nw.png" alt="technology"
               <figcaption>Techonolgy in the World</figcaption>
             </figure>
             <figure>
@@ -27,7 +27,7 @@ export const welcomePage = () => {
             </figure>
             <figure>
               <img src="/utilitys/img/friendsCel.jpg" alt="friendscel"
-              <figcaption>Utah, United States</figcaption>
+              <figcaption>Sencillez y facilidad para todo tipo de dispositivos.<br> Para usarla en todo momento y en todo lugar </figcaption>
             </figure>         
             
           </figure>
