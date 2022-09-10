@@ -1,9 +1,11 @@
 /*import { userLogin, loginWithGoogle } from '../lib/firebase.js';*/
 
-export const welcomePage = () => {
-  const containerwelcome = document.createElement('section');
-  containerwelcome.className = 'welcome';
-  const viewwelcome = `
+//export const welcomePage = () => {
+//  const containerwelcome = document.createElement('section');
+// containerwelcome.className = 'welcome';
+//  const viewwelcome =
+
+export const welcome = `
   <div class="containerWelcome">
   <header>
     <div class="containerHeader">
@@ -41,9 +43,9 @@ export const welcomePage = () => {
       <div class="parrafo">Nuestra meta es dar a conocer avances tecnologícos, programas para el uso profesional o recreativo y nuevos dispositivos para mejorar la calidad de vida y el funcionamiento de la sociedad, para que puedan compartir y conocer nuevas tecnologías de interés común.</div>
       <div class="buttonCover">
         <!--button type="button" class="button" id="Inicio">¡Quiero Ingresar!</button-->
-      <button type="button" class="button"  id="Inicio" onclick="location.href='login.html';"> ¡Quiero Ingresar! </button>
+      <button type="button" class="button"  id="Inicio" onclick="location.href='register.html';"> ¡Quiero Ingresar! </button>
   </div>
-</div> `;
-  containerwelcome.innerHTML = viewwelcome;
-  return containerwelcome;
-};
+</div> `
+//containerwelcome.innerHTML = viewwelcome;
+//return containerwelcome;
+//};

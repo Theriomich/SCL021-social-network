@@ -185,13 +185,15 @@ body {
 /** {
   box-sizing: border-box;
 }*/
-body,
+
 figure {
   margin: 0;
   /*background: #101010;*/
   font-family: Istok Web, sans-serif;
   font-weight: 100;
   align-content: center;
+  font-weight: bolder;
+  text-align: center;
 }
 
 div#captioned-gallery {
@@ -233,6 +235,7 @@ figure.slider figure figcaption {
   padding: .5rem;
   align-content: center;
   text-shadow: 0 0 30px rgba(31, 7, 248, 0.534);
+  font-weight: bolder;
 }
 
 .imageP {
