@@ -1,7 +1,8 @@
-export const registerPage = () => {
-  const containerCreateUser = document.createElement("section");
-  containerCreateUser.className = "register";
-  const viewRegister = `
+//export const registerPage = () => {
+// const containerCreateUser = document.createElement("section");
+//containerCreateUser.className = "register";
+//const viewRegister =
+export const register = `
   <div class="containerPages">
   <header>
     <div class="containerHeader">
@@ -42,11 +43,11 @@ export const registerPage = () => {
         maxlength="10"
         autocomplete="current-password"
       />
-        <button class="Button" id="signup" type="submit">Regístrate</button>
+        <button class="Button" id="signup" onclick="location.href='login.html';" type="submit">Regístrate</button>
       </section>
 	 </div>
-</div> `;
-      containerCreateUser.innerHTML = viewRegister;
-      return containerCreateUser;
-    };
+</div> `
+//containerCreateUser.innerHTML = viewRegister;
+//return containerCreateUser;
+   // };
 

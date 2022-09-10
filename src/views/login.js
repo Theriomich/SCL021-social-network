@@ -1,14 +1,15 @@
-import { userLogin, loginWithGoogle } from "../lib/firebase.js";
+//import { userLogin, loginWithGoogle } from "../lib/firebase.js";
 /*import { routes } from "./routes.js";
 import { register } from "./register.js";
 import { welcome } from "./welcome.js";*/
 
 
-export const login = () => 
-  {
-  const containerLogin = document.createElement("section");
-    containerLogin.className = "view-container";
-    const viewLogin = `
+//export const login = () => 
+// {
+//const containerLogin = document.createElement("section");
+//containerLogin.className = "view-container";
+//const viewLogin = 
+export const login = `
     <header>
     <div class="login-container">
       <div class="login-inputs">
@@ -27,9 +28,10 @@ export const login = () =>
           placeholder="Ingresa tu contraseña"
           maxlength="30"
         />
-        <button class="login-btn" id="signUp" type="submit">
+        <button class="login-btn" id="signUp" onclick="location.href='wall.html';" type="submit">
           Iniciar Sesión
         </button>
-        </div> `;
-  containerLogin.innerHTML = viewLogin;
-}
+        </div>
+         `
+  //containerLogin.innerHTML = viewLogin;
+//}

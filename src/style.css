@@ -7,10 +7,12 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body {
   height: 100%;
   width: 100%;
-  }
+}
+
 .welcome {
   background-size: cover;
   background-attachment: fixed;
@@ -32,6 +34,7 @@ body {
   /*margin-left: 4%;
   margin-right: 4%;*/
 }
+
 @media only screen and (max-width: 800px) {
   .containerHeader {
     font-size: 25px;
@@ -48,7 +51,7 @@ body {
   @import url('http://fonts.cdnfonts.com/css/astrolyte');
   font-family: 'Astrolyte', sans-serif;
   text-shadow: 0 0 30px #fff;
- }
+}
 
 .parrafo {
   font-size: 25px;
@@ -60,14 +63,14 @@ body {
   margin-right: 4%;
   font-family: "Montserrat";
 
-  }
+}
 
 @media only screen and (max-width: 800px) {
   .imageP {
     font-size: 10px;
   }
-  .parrafo
-     {
+
+  .parrafo {
     font-size: 15px;
   }
 }
@@ -140,61 +143,108 @@ body {
 
 /*********************CARRUSEL*****************************************************/
 @import url(https://fonts.googleapis.com/css?family=Istok+Web);
+
 @keyframes slidy {
-0% { left: 0%; }
-20% { left: 0%; }
-25% { left: -100%; }
-45% { left: -100%; }
-50% { left: -200%; }
-70% { left: -200%; }
-75% { left: -300%; }
-95% { left: -300%; }
-100% { left: -400%; }
+  0% {
+    left: 0%;
+  }
+
+  20% {
+    left: 0%;
+  }
+
+  25% {
+    left: -100%;
+  }
+
+  45% {
+    left: -100%;
+  }
+
+  50% {
+    left: -200%;
+  }
+
+  70% {
+    left: -200%;
+  }
+
+  75% {
+    left: -300%;
+  }
+
+  95% {
+    left: -300%;
+  }
+
+  100% {
+    left: -400%;
+  }
 }
+
 /** {
   box-sizing: border-box;
 }*/
-body, figure { 
-  margin: 0; /*background: #101010;*/
+
+figure {
+  margin: 0;
+  /*background: #101010;*/
   font-family: Istok Web, sans-serif;
   font-weight: 100;
   align-content: center;
-}
-div#captioned-gallery { 
-  width: 100%; 
-  overflow: hidden; 
+  font-weight: bolder;
   text-align: center;
 }
-figure.slider { 
-  position: relative; width: 500%;
-  font-size: 0; animation: 20s slidy infinite; 
+
+div#captioned-gallery {
+  width: 100%;
+  overflow: hidden;
+  text-align: center;
 }
-figure.slider figure { 
-  width: 20%; height: auto;
-  display: inline-block;  position: inherit; 
-  
+
+figure.slider {
+  position: relative;
+  width: 500%;
+  font-size: 0;
+  animation: 20s slidy infinite;
 }
-figure.slider img { 
-  width: 30%; 
+
+figure.slider figure {
+  width: 20%;
+  height: auto;
+  display: inline-block;
+  position: inherit;
+
+}
+
+figure.slider img {
+  width: 30%;
   height: auto;
   border-radius: 20px;
   object-fit: cover;
   align-items: stretch;
 }
-figure.slider figure figcaption { 
-  position: absolute; bottom: 0;
+
+figure.slider figure figcaption {
+  position: absolute;
+  bottom: 0;
   /*background: rgba(0,0,0,0.4);*/
-  color: #fff; width: 100%;
-  font-size: 1rem; padding: .5rem; 
+  color: #fff;
+  width: 100%;
+  font-size: 1rem;
+  padding: .5rem;
   align-content: center;
   text-shadow: 0 0 30px rgba(31, 7, 248, 0.534);
+  font-weight: bolder;
 }
+
 .imageP {
   color: azure;
   position: absolute;
 }
+
 /*********************CARRUSEL*****************************************************/
-.login-title{
+.login-title {
   @import url('http://fonts.cdnfonts.com/css/astrolyte');
   font-family: 'Astrolyte', sans-serif;
   text-shadow: 0 0 30px #fff;
@@ -202,6 +252,7 @@ figure.slider figure figcaption {
   color: #ecf0f3;
   margin-top: 2%;
 }
+
 .containerPages {
   display: flex;
   justify-content: center;
@@ -213,12 +264,14 @@ figure.slider figure figcaption {
   @import url('http://fonts.cdnfonts.com/css/astrolyte');
   font-family: 'Astrolyte', sans-serif;
   text-shadow: 0 0 30px #fff;
- }
- .containerLogin{
+}
+
+.containerLogin {
   display: flex;
   flex-direction: column;
-  align-items:center;
+  align-items: center;
 }
+
 .Button {
   border-radius: 0.375rem;
   background: #0F4951;
@@ -228,14 +281,16 @@ figure.slider figure figcaption {
   margin: 1rem;
   color: white;
 }
-.Inputs-L{
+
+.Inputs-L {
   border-radius: 0.375rem;
   background: #f5f6f8;
   border: none;
-  width: 11.5rem ;
+  width: 11.5rem;
   height: 2rem;
   margin: 1rem;
 }
+
 .Inputs-L::placeholder {
   text-align: center;
   color: #037ef3;
