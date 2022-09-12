@@ -1,7 +1,7 @@
-import { welcome } from '../views/welcome.js';
+/*import { welcome } from '../views/welcome.js';
 import { register } from '../views/register.js';
 import { login } from '../views/login.js';
-import { wall } from '../views/wall.js';
+import { wall } from '../views/wall.js';*/
 
 /*export const routes = (hash) => {
   const menuRegister = document.getElementById('root');

@@ -9,29 +9,52 @@ import { welcome } from "./welcome.js";*/
 //const containerLogin = document.createElement("section");
 //containerLogin.className = "view-container";
 //const viewLogin = 
-export const login = `
-    <header>
+ let login = 
+`
+<div class="containerPages">
+<header>
+  <div class="containerHeader">
+    <img src="./utilitys/img/logo.png" alt="Technology  Red Social">
+  </div>
+</header>
     <div class="login-container">
-      <div class="login-inputs">
-        <h3 class="login-title">Iniciar Sesión</h3>
-        <input
-          class="user-input"
-          id="emailLogin"
-          type="email"
-          placeholder="Ingresa tu correo"
-          maxlength="30"
+    <section class = "containerLogin">
+      <h3 class="login-title">Inicia Sesión</h3>
+  <section class = "containerLogin">
+   <input
+        class="Inputs-L"
+        id="emailLogin"
+        type="email"
+        placeholder="Usuario / Correo"
+        maxlength="30"
+      />
+      <input
+        class="Inputs-L"
+        id="passLogin"
+        type="password"
+        placeholder="Contraseña"
+        maxlength="30"
+      />
+      <br/>
+      <button class="Button" id="signUp" onclick="location.href='wall.html';" type="submit">
+        Login
+      </button>
+    </section>
+    <h5 class="test" >Ingresa con</h5>
+    <center><div class="logo-container">
+        <img
+          class="logo"
+          src="utilitys/img/logo-google.png"
+          alt="google-logo"
         />
-        <input
-          class="user-password"
-          id="passLogin"
-          type="password"
-          placeholder="Ingresa tu contraseña"
-          maxlength="30"
+        <img
+          class="logo"
+          src="utilitys/img/Fb.svg"
+          alt="google-logo"
         />
-        <button class="login-btn" id="signUp" onclick="location.href='wall.html';" type="submit">
-          Iniciar Sesión
-        </button>
-        </div>
+    </div></center>
+ </div>
+</div>  
          `
   //containerLogin.innerHTML = viewLogin;
 //}

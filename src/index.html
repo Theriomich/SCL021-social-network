@@ -9,6 +9,10 @@
   <link rel="stylesheet" href="style.css" />
   <link href="http://fonts.cdnfonts.com/css/astrolyte" rel="stylesheet">
   <script src="https://kit.fontawesome.com/2f7b5715af.js" crossorigin="anonymous"></script>
+  <script src="./views/login.js"></script>
+  <script src="./views/register.js"></script>
+  <script src="./views/welcome.js"></script>
+  <script src="./views/wall.js"></script>
 </head>
 <header>
 </header>
@@ -20,11 +24,13 @@
     <li class="navbar-item"><a href="#" onclick="onNavigate('/login'); return false;">Login</a></li>
     <li class="navbar-item"><a href="#" onclick="onNavigate('/wall'); return false;">Wall</a></li>
   </ul>
+
   <main>
     <div id="root"></div>
   </main>
   <!--<script type="module" src="main.js"></script-->
-  <script type="module" src="./lib/routes.js"></script>
+  <script src="./lib/routes.js"></script>
+  <div id="root"></div>
 </body>
 
 </html>
