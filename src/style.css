@@ -295,3 +295,89 @@ figure.slider figure figcaption {
   text-align: center;
   color: #037ef3;
 }
+
+.footerimg img {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  left: 0px;
+  top: 632px;
+  mix-blend-mode: normal;
+}
+
+.user-input {
+
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 330px;
+  height: 60px;
+  left: 25px;
+  top: 198px;
+
+  border: 1px solid #1994FF;
+  border-radius: 5px;
+}
+
+.user-password {
+
+  box-sizing: border-box;
+
+  position: absolute;
+  width: 330px;
+  height: 60px;
+  left: 24px;
+  top: 301px;
+
+  border: 1px solid #1994FF;
+  border-radius: 5px;
+}
+
+.login-btn {
+  position: absolute;
+  width: 330px;
+  height: 60px;
+  left: 25px;
+  top: 421px;
+  background: #0B6EFE;
+  opacity: 0.3;
+  border-radius: 5px;
+  border: outset;
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+
+  color: #FFFFFF;
+
+}
+
+.login-btn:hover {
+  border: inset;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.login-title {
+  position: absolute;
+  width: 123px;
+  height: 30px;
+  left: 18px;
+  top: 136px;
+
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+
+  color: #005FB3;
+}
+
+.login-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}

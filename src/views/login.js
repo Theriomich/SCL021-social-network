@@ -11,7 +11,7 @@ import { welcome } from "./welcome.js";*/
 //const viewLogin = 
 export const login = `
     <header>
-    <div class="login-container">
+    <div class="containerPages">
       <div class="login-inputs">
         <h3 class="login-title">Iniciar Sesión</h3>
         <input
@@ -20,18 +20,23 @@ export const login = `
           type="email"
           placeholder="Ingresa tu correo"
           maxlength="30"
+          required=""
         />
         <input
           class="user-password"
           id="passLogin"
           type="password"
           placeholder="Ingresa tu contraseña"
-          maxlength="30"
+          maxlength="10"
+          required"
         />
         <button class="login-btn" id="signUp" onclick="location.href='wall.html';" type="submit">
           Iniciar Sesión
         </button>
         </div>
+        <footer class=footerimg>
+        <img src="/utilitys/img/technology footer.png" alt="friends">
+        </footer>
          `
   //containerLogin.innerHTML = viewLogin;
 //}
