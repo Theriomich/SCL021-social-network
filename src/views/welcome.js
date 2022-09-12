@@ -5,7 +5,9 @@
 // containerwelcome.className = 'welcome';
 //  const viewwelcome =
 
-export const welcome = `
+let welcome = 
+
+`
   <div class="containerWelcome">
   <header>
     <div class="containerHeader">
