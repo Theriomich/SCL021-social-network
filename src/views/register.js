@@ -1,8 +1,28 @@
+// import { registerButton } from "../lib/index.js"
+import { getAuth, createUserWithEmailAndPassword } from "../lib/firebase.js"
 export const register = () => {
   const registerDiv = document.createElement("div")
 
   let viewRegister = /*html*/
     `
+    <header id="header">
+    <div class="container__header">
+        <div class="logo">
+            <img src="./utilitys/img/logo.png" alt="">
+        </div>
+        <div class="container__nav">
+            <nav id="nav">
+                <ul>
+                  <li><a href="#"  class="select" onclick="onNavigate('/'); return false;">HOME</a></li>
+                  <li><a href="#" onclick="onNavigate('/register'); return false;">REGISTER</a></li>
+                  <li><a href="#" onclick="onNavigate('/login'); return false;">LOGIN</a></li>
+                  <li><a href="#" onclick="onNavigate('/wall'); return false;">WALL</a></li>
+                </ul>
+            </nav>          
+            <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
+        </div>
+    </div>
+  </header>
 <div class="containerPages">
   <div class="register-container">
     <section class = "containerLogin">
@@ -49,13 +69,59 @@ export const register = () => {
         />
     </div></center>
   </div>
+  <Footer>
+    <div class="container__footer">
+      <div class="logo_footer">
+        <img src="./utilitys/img/wd1.svg" alt="">
+      </div>
+    </div>
+  </Footer>
 </div> `
-  console.log(viewRegister)
+
   registerDiv.innerHTML = viewRegister
-  registerDiv.querySelector("#register").addEventListener("click", function () {
-    console.log("diste un click")
-  });
+
+  let registerButton = registerDiv.querySelector("#register")
+  let email = registerDiv.querySelector("#userSignUp").value
+  let password = registerDiv.querySelector("#passwordSignUp").value
+  console.log(email);
+  console.log(password);
+
+  if (registerButton !== null) {
+    registerButton.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      const auth = getAuth();
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+        });
+
+
+
+    });
+  }
+
+
+  function registerUser() {
+
+
+  }
+
+
+
+  // addEventListener("click", function () {
+  //   console.log("diste un click")
+  // });
   return registerDiv
+
+
 
 }
 
