@@ -8,6 +8,23 @@
 let welcome = 
 
 `
+<header id="header">
+    <div class="container__header">
+        <div class="logo">
+            <img src="./utilitys/img/logo.png" alt="">
+        </div>
+        <div class="container__nav">
+            <nav id="nav">
+                <ul>
+                  <li><a href="#"  class="select" onclick="onNavigate('/'); return false;">HOME</a></li>
+                  <li><a href="#" onclick="onNavigate('/register'); return false;">REGISTER</a></li>
+                  <li><a href="#" onclick="onNavigate('/login'); return false;">LOGIN</a></li>
+                  <li><a href="#" onclick="onNavigate('/wall'); return false;">WALL</a></li>
+                </ul>
+            </nav>          
+            <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
+        </div>
+    </div>
   <div class="containerWelcome">
     <div class="parrafo">Bienvenidos a Social Tech, una red social de tecnología que busca la conectividad entre personas de distintas partes del mundo.</div>
       <!--base href="utilitys/img"-->
