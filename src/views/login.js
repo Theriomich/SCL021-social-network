@@ -10,8 +10,9 @@ import { welcome } from "./welcome.js";*/
 //containerLogin.className = "view-container";
 //const viewLogin = 
 
- let login = 
-`
+let login =
+  `
+
 <div class="containerPages">
     <div class="login-container">
     <section class = "containerLogin">
@@ -32,7 +33,7 @@ import { welcome } from "./welcome.js";*/
         maxlength="30"
       />
       <br/>
-      <button class="Button" id="signUp" onclick="location.href='wall.html';" type="submit">
+      <button class="buttonL" id="signUp" onclick="location.href='wall.html';" type="submit">
         Login
       </button>
     </section>
