@@ -9,14 +9,10 @@ import { welcome } from "./welcome.js";*/
 //const containerLogin = document.createElement("section");
 //containerLogin.className = "view-container";
 //const viewLogin = 
+
  let login = 
 `
 <div class="containerPages">
-<header>
-  <div class="containerHeader">
-    <img src="./utilitys/img/logo.png" alt="Technology  Red Social">
-  </div>
-</header>
     <div class="login-container">
     <section class = "containerLogin">
       <h3 class="login-title">Inicia Sesión</h3>

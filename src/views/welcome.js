@@ -9,11 +9,6 @@ let welcome =
 
 `
   <div class="containerWelcome">
-  <header>
-    <div class="containerHeader">
-      <h1>Technology  Red Social</h1>
-    </div>
-  </header>
     <div class="parrafo">Bienvenidos a Social Tech, una red social de tecnología que busca la conectividad entre personas de distintas partes del mundo.</div>
       <!--base href="utilitys/img"-->
         <div id="captioned-gallery">
