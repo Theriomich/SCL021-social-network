@@ -4,14 +4,15 @@ import { register } from "./register.js";
 import { welcome } from "./welcome.js";*/
 
 
-//export const login = () => 
+//export const login = () 
 // {
 //const containerLogin = document.createElement("section");
 //containerLogin.className = "view-container";
 //const viewLogin = 
-
-let login =
-  `
+export const login = () => {
+  const loginDiv = document.createElement("div")
+  let handleLogin =
+    `
 
 <div class="containerPages">
     <div class="login-container">
@@ -53,5 +54,12 @@ let login =
  </div>
 </div>  
          `
+
+  loginDiv.innerHTML = handleLogin
+  // loginDiv.querySelector("#signUp").addEventListener("click", function () {
+
+  // });
+  return loginDiv
+}
   //containerLogin.innerHTML = viewLogin;
 //}

@@ -1,14 +1,14 @@
-/*import { welcome } from '../views/welcome.js';
+import { welcome } from '../views/welcome.js';
 import { register } from '../views/register.js';
 import { login } from '../views/login.js';
-import { wall } from '../views/wall.js';*/
+import { wall } from '../views/wall.js';
 
 
-const routes = {
-  '/': welcome,
+export const routes = {
+  '/': welcome(),
   '/register': register(),
-  '/login': login,
-  '/wall': wall
+  '/login': login(),
+  '/wall': wall(),
 };
 const rootDiv = document.getElementById('root');
 rootDiv.innerHTML = routes[window.location.pathname];

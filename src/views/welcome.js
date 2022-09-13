@@ -5,9 +5,10 @@
 // containerwelcome.className = 'welcome';
 //  const viewwelcome =
 
-let welcome = 
-
-`
+export const welcome = () => {
+  const welcomeDiv = document.createElement("div")
+  let viewWelcome =
+    `
 <header id="header">
     <div class="container__header">
         <div class="logo">
@@ -59,6 +60,12 @@ let welcome =
       <button type="button" class="button"  id="Inicio" onclick="location.href='register.html';"> ¡Quiero Ingresar! </button>
   </div>
 </div> `
+
+
+  welcomeDiv.innerHTML = viewWelcome
+  return viewWelcome
+}
+
 //containerwelcome.innerHTML = viewwelcome;
 //return containerwelcome;
 //};

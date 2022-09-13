@@ -1,4 +1,4 @@
-function register() {
+export const register = () => {
   const registerDiv = document.createElement("div")
 
   let viewRegister = /*html*/
@@ -50,12 +50,13 @@ function register() {
     </div></center>
   </div>
 </div> `
+  console.log(viewRegister)
   registerDiv.innerHTML = viewRegister
-  viewRegister.querySelector("#register").addEventListener("click", function () {
+  registerDiv.querySelector("#register").addEventListener("click", function () {
     console.log("diste un click")
   });
   return registerDiv
 
 }
-export default register
+
 

@@ -1,19 +1,20 @@
-//import { routes } from './lib/routes.js';
-/*import { observer } from './lib/firebase.js';*/
-// import { welcomePage } from '../views/welcome.js';
-import '../views/register.js';
-// Este es el punto de entrada de tu aplicacion
-/* import { myFunction } from './lib/index.js'; */
+// import { welcome } from "./views/welcome.js"
+import { routes } from "./lib/routes.js"
+const root = document.getElementById("root")
+console.log(window.location.pathname)
+root.appendChild(routes[window.location.pathname])
 
-<<<<<<< HEAD
-=======
+const onNavigate = (pathname) => {
+    window.history.pushState(
+        {},
+        pathname,
+        window.location.origin + pathname
+    )
+    rootDiv.appendChild(routes[pathname])
+}
+window.onpopstate = () => {
+    rootDiv.innerHTML = routes[window.location.pathname]
+}
 
-//document.getElementById("root").appendChild(welcomePage());
-/*document.getElementById("root").appendChild(registerPage());*/
 
 
-<script src="./views/login.js"></script>
-<script src="./views/register.js"></script>
-<script src="./views/welcome.js"></script>
-<script src="./views/wall.js"></script>
->>>>>>> e8559ac692c5f260d24cac6cfffe31d808e7750e
