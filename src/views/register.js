@@ -1,15 +1,9 @@
-//export const registerPage = () => {
-// const containerCreateUser = document.createElement("section");
-//containerCreateUser.className = "register";
-//const viewRegister =
- let register = 
+function register() {
+  const registerDiv = document.createElement("div")
+
+  let viewRegister = /*html*/ 
 `
 <div class="containerPages">
-<header>
-  <div class="containerHeader">
-    <img src="./utilitys/img/logo.png" alt="Technology  Red Social">
-  </div>
-</header>
   <div class="register-container">
     <section class = "containerLogin">
       <h3 class="login-title">Registrarse </h3>
@@ -41,7 +35,7 @@
       <button class="Button" id="signup" onclick="location.href='login.html';" type="submit">Regístrar</button>
     </section>
     <h5 class="test" >Ingresa con</h5>
-    <div class="logo-container">
+    <center><div class="logo-container">
         <img
           class="logo"
           src="utilitys/img/logo-google.png"
@@ -52,10 +46,15 @@
           src="utilitys/img/Fb.svg"
           alt="google-logo"
         />
-    </div>
+    </div></center>
   </div>
 </div> `
-//containerCreateUser.innerHTML = viewRegister;
-//return containerCreateUser;
-   // };
+registerDiv.innerHTML = viewRegister
+viewRegister.querySelector("#register").addEventListener("click", function () {
+  console.log("diste un click")
+});
+return registerDiv
+
+}
+export default register
 
