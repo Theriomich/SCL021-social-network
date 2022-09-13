@@ -1,5 +1,5 @@
 // import { registerButton } from "../lib/index.js"
-import { getAuth, createUserWithEmailAndPassword } from "../lib/firebase.js"
+// import { getAuth, createUserWithEmailAndPassword } from "../lib/firebase.js"
 export const register = () => {
   const registerDiv = document.createElement("div")
 
