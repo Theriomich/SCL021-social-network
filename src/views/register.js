@@ -4,12 +4,7 @@ function register() {
   let viewRegister = /*html*/
     `
 <div class="containerPages">
-<header>
-  <div class="containerHeader">
-    <img src="./utilitys/img/logo.png" alt="Technology  Red Social">
-  </div>
-</header>
-  <div class= "register-container">
+  <div class="register-container">
     <section class = "containerLogin">
       <h3 class="login-title">Registrarse </h3>
       <input class="Inputs-L"  
@@ -41,7 +36,7 @@ function register() {
       
     </section>
     <h5 class="test" >Ingresa con</h5>
-    <div class="logo-container">
+    <center><div class="logo-container">
         <img
           class="logo"
           src="utilitys/img/logo-google.png"
@@ -52,10 +47,9 @@ function register() {
           src="utilitys/img/Fb.svg"
           alt="google-logo"
         />
-    </div>
+    </div></center>
   </div>
-</div> 
-`
+</div> `
   registerDiv.innerHTML = viewRegister
   viewRegister.querySelector("#register").addEventListener("click", function () {
     console.log("diste un click")
@@ -64,7 +58,4 @@ function register() {
 
 }
 export default register
-
-
-
 
