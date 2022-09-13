@@ -412,7 +412,8 @@ height: 100%;
   height: 2rem;
   margin: 1rem;
   color: white;
-  opacity: 0, 3;
+  opacity: 0.5;
+  border: outset;
 }
 
 .Inputs-L {
@@ -427,6 +428,7 @@ height: 100%;
 .Inputs-L::placeholder {
   text-align: center;
   color: #037ef3;
+  opacity: 0.5;
 }
 
 .simple {
