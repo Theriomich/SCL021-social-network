@@ -1,8 +1,7 @@
-//export const registerPage = () => {
-// const containerCreateUser = document.createElement("section");
-//containerCreateUser.className = "register";
-//const viewRegister =
- let register = 
+function register() {
+  const registerDiv = document.createElement("div")
+
+  let viewRegister = /*html*/ 
 `
 <div class="containerPages">
   <div class="register-container">
@@ -50,7 +49,12 @@
     </div></center>
   </div>
 </div> `
-//containerCreateUser.innerHTML = viewRegister;
-//return containerCreateUser;
-   // };
+registerDiv.innerHTML = viewRegister
+viewRegister.querySelector("#register").addEventListener("click", function () {
+  console.log("diste un click")
+});
+return registerDiv
+
+}
+export default register
 
