@@ -1,16 +1,15 @@
-//export const registerPage = () => {
-// const containerCreateUser = document.createElement("section");
-//containerCreateUser.className = "register";
-//const viewRegister =
- let register = 
-`
+function register() {
+  const registerDiv = document.createElement("div")
+
+  let viewRegister = /*html*/
+    `
 <div class="containerPages">
 <header>
   <div class="containerHeader">
     <img src="./utilitys/img/logo.png" alt="Technology  Red Social">
   </div>
 </header>
-  <div class="register-container">
+  <div class= "register-container">
     <section class = "containerLogin">
       <h3 class="login-title">Registrarse </h3>
       <input class="Inputs-L"  
@@ -37,8 +36,9 @@
       autocomplete="current-password"
     />
       <br/>
-      <a href="#" onclick="onNavigate('/register'); return false;"><h5 class="simple" >¿Olvidaste tu Contraseña?</h5></a>
-      <button class="Button" id="signup" onclick="location.href='login.html';" type="submit">Regístrar</button>
+      <a href="#" ><h5 class="simple" >¿Olvidaste tu Contraseña?</h5></a>
+      <button class="buttonL" id="register" onClick= "location.href = 'login.html'" onClick=""  type="submit">Regístrar</button>
+      
     </section>
     <h5 class="test" >Ingresa con</h5>
     <div class="logo-container">
@@ -54,8 +54,17 @@
         />
     </div>
   </div>
-</div> `
-//containerCreateUser.innerHTML = viewRegister;
-//return containerCreateUser;
-   // };
+</div> 
+`
+  registerDiv.innerHTML = viewRegister
+  viewRegister.querySelector("#register").addEventListener("click", function () {
+    console.log("diste un click")
+  });
+  return registerDiv
+
+}
+export default register
+
+
+
 

@@ -104,3 +104,7 @@ export const loginWithGoogle = () => {
       return errorMessage + errorCode + email + credential;
     });
 };
+
+export const registerPage = () => {
+  console.log("diste un click")
+};

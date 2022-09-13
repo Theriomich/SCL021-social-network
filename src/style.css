@@ -293,7 +293,8 @@ figure.slider figure figcaption {
   height: 2rem;
   margin: 1rem;
   color: white;
-  opacity: 0, 3;
+  opacity: 0.5;
+  border: outset;
 }
 
 .Inputs-L {
@@ -308,6 +309,7 @@ figure.slider figure figcaption {
 .Inputs-L::placeholder {
   text-align: center;
   color: #037ef3;
+  opacity: 0.5;
 }
 
 .simple {
