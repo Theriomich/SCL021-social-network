@@ -62,8 +62,6 @@ export const welcome = () => {
       <button type="button" class="button"  id="Inicio" onclick="location.href='register.html';"> ¡Quiero Ingresar! </button>
   </div>
 </div> `
-
-
   welcomeDiv.innerHTML = viewWelcome
   return viewWelcome
 }

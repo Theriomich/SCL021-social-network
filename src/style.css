@@ -1,6 +1,6 @@
-* {
+/* * {
   outline: 1px solid limegreen !important;
-}
+} */
 
 * {
   padding: 0;
@@ -231,7 +231,7 @@ body {
   box-shadow: rgb(173, 124, 58);
   ;
   /*background-color: rgb(252, 166, 55);*/
-  background-color: #3aa4d4;
+  background-color: #1c2aef;
   border-radius: 18px;
   border: 1px solid #2f96d6;
   display: inline-block;
@@ -378,8 +378,7 @@ figure.slider figure figcaption {
   font-family: 'Astrolyte', sans-serif;
   text-shadow: 0 0 30px #fff;
   font-size: 25px;
-  color: 005FB3;
-  margin-top: 2%;
+  color: 005FB3 margin-top: 2%;
 }
 
 .containerPages {
@@ -426,37 +425,49 @@ figure.slider figure figcaption {
   border-radius: 0.375rem;
   background: #0B6EFE;
   border: none;
-  width: 6rem;
-  height: 2rem;
+  width: 9rem;
+  height: 3rem;
   margin: 1rem;
-  color: white;
+  color: rgb(255, 255, 255);
   opacity: 0.5;
   border: outset;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .Inputs-L {
-  border-radius: 0.375rem;
+  /*border-radius: 0.375rem;
   background: #f5f6f8;
   border: none;
   width: 11.5rem;
   height: 2rem;
-  margin: 1rem;
+  margin: 1rem;*/
+  border-radius: 15px;
+  width: 400px;
+  padding: 15px;
+  border-color: #97d9e1;
+  margin-top: 1%;
 }
 
 .Inputs-L::placeholder {
   text-align: center;
-  color: #037ef3;
-  opacity: 0.5;
+  /*color: #037ef3;*/
+  color: #005FB3;
+  /*opacity: 0.5;*/
+  /*font-family: "Astrolyte";*/
 }
 
 .simple {
-  font-family: 'Courier New', Courier, monospace;
+  color: 005FB3;
+  font-family: 'Astrolyte', sans-serif;
+  font-size: 15px;
+
 }
 
 .test {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Astrolyte";
   text-align: center;
-  color: #037ef3;
+  color: #005FB3;
   /*background: linear-gradient(to right, #0B6EFE, white); */
   /*background: radial-gradient(white, #0B6EFE);*/
   /*background: radial-gradient(ellipse at top, white,#0B6EFE),
