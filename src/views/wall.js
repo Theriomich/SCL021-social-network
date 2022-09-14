@@ -19,8 +19,21 @@ export const wall = () => {
             <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
         </div>
     </div>
-  </header>
-<!--h1>I am wall Page</h1-->
+    <div class="user-icon">
+          <img src="./utilitys/img/usuario.png" alt="user" />
+    </div>
+    <div> <h1 class="saludoUser"> "¡Bienvenido Usuario Tech!"</h1></div>
+    </header>
+    <div class="containerPages">
+        <div class="wall-container"> 
+        <section class = "containerWall">
+          <div class="textarea-container"><textarea class="post-message" id="postMessage" cols="10" rows="3"
+          placeholder="Comparte  tu opinión  y/o Tips"></textarea>
+          </div>
+       <button class="buttonL" id="postBtn" type="submit">Publicar</button>
+        </section>
+       </div>
+    </div> 
 `
     wallDiv.innerHTML = wallPage
 
