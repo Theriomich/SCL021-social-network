@@ -15,7 +15,7 @@ export const welcome = () => {
         <h1> Tecnology Red Social</h1>
             <!--img src="./utilitys/img/logo.png" alt=""-->
         </div>
-        <div class="container__nav">
+                <div class="container__nav">
             <nav id="nav">
                 <ul>
                   <li><a href="#"  class="select" onclick="onNavigate('/'); return false;">HOME</a></li>

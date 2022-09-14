@@ -45,7 +45,7 @@ export const register = () => {
       class="Inputs-L"
       id="passwordValidate"
       type="password"
-      placeholder="Repitir contraseña"
+      placeholder="Repetir contraseña"
       maxlength="10"
       autocomplete="current-password"
     />
@@ -77,13 +77,11 @@ export const register = () => {
   </Footer>
 </div> `
   registerDiv.innerHTML = viewRegister
-
   let registerButton = registerDiv.querySelector("#register")
   let email = registerDiv.querySelector("#userSignUp").value
   let password = registerDiv.querySelector("#passwordSignUp").value
   console.log(email);
   console.log(password);
-
   if (registerButton !== null) {
     registerButton.addEventListener("click", (event) => {
       event.preventDefault();
@@ -103,12 +101,7 @@ export const register = () => {
     });
   }
   function registerUser() {
-
-
   }
-
-
-
   // addEventListener("click", function () {
   //   console.log("diste un click")
   // });

@@ -35,8 +35,7 @@ export const login = () => {
     <div class="login-container">
     <section class = "containerLogin">
       <h3 class="login-title">Inicia Sesión</h3>
-  <section class = "containerLogin">
-   <input
+     <input
         class="Inputs-L"
         id="emailLogin"
         type="email"

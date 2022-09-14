@@ -1,6 +1,8 @@
+
 /* * {
   outline: 1px solid limegreen !important;
 } */
+
 
 * {
   padding: 0;
@@ -10,8 +12,6 @@
 }
 
 /*Header*/
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 
 header {
   width: 100%;
@@ -374,11 +374,12 @@ figure.slider figure figcaption {
 
 /*********************CARRUSEL*****************************************************/
 .login-title {
-  @import url('http://fonts.cdnfonts.com/css/astrolyte');
   font-family: 'Astrolyte', sans-serif;
   text-shadow: 0 0 30px #fff;
   font-size: 25px;
+
   color: 005FB3 margin-top: 2%;
+
 }
 
 .containerPages {
@@ -397,6 +398,12 @@ figure.slider figure figcaption {
   font-family: 'Astrolyte', sans-serif;
   text-shadow: 0 0 30px #fff;
 }
+/*@media only screen and (max-width: 800px) {
+  .containerPages,
+  .register-container,
+  .containerLogin
+REVISAR PARA RESPONSIVE
+}*/
 
 .register-container {
   display: flex;
@@ -458,9 +465,12 @@ figure.slider figure figcaption {
 }
 
 .simple {
+
+
   color: 005FB3;
   font-family: 'Astrolyte', sans-serif;
   font-size: 15px;
+
 
 }
 
@@ -502,3 +512,41 @@ footer {
 }
 
 .logo_footer {}
+/*********WALL********/
+
+.wall-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+.post-message
+  {
+  border-radius: 15px;
+  width: 400px;
+  padding: 15px;  
+  border-color: #97d9e1;
+  font-family: "Astrolyte";
+}
+.containerWall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 8%;
+}
+.user-icon{
+  height: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-top: 3%;
+  margin-left: 15%;
+}
+.saludoUser {
+  font-family: 'Astrolyte', sans-serif;
+  font-size:20px;
+  color: #005FB3;
+  margin-top: 1%;
+  margin-left: 8%;
+}
