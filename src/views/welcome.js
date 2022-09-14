@@ -9,10 +9,11 @@ export const welcome = () => {
   const welcomeDiv = document.createElement("div")
   let viewWelcome =
     `
-<header id="header">
+    <header id="header">
     <div class="container__header">
-        <div class="logo">
-            <img src="./utilitys/img/logo.png" alt="">
+        <div class="titulo">
+        <h1> Tecnology Red Social</h1>
+            <!--img src="./utilitys/img/logo.png" alt=""-->
         </div>
         <div class="container__nav">
             <nav id="nav">
@@ -26,6 +27,7 @@ export const welcome = () => {
             <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
         </div>
     </div>
+  </header>
   <div class="containerWelcome">
     <div class="parrafo">Bienvenidos a Social Tech, una red social de tecnología que busca la conectividad entre personas de distintas partes del mundo.</div>
       <!--base href="utilitys/img"-->
@@ -42,7 +44,7 @@ export const welcome = () => {
           </figure>
           <figure>
             <img src="/utilitys/img/scroll1.png" alt="friendscel">
-            <figcaption>Sencillez y facilidad para todo tipo de dispositivos.<br> Para usarla en todo momento y en todo lugar </figcaption>
+            <figcaption>Adaptable a todo tipo de dispositivos.<br> Para usarla en todo momento y en todo lugar </figcaption>
           </figure>
           <figure>
             <img src="/utilitys/img/960x0.png" alt="technology">
