@@ -2,8 +2,7 @@
 // import { getAuth, createUserWithEmailAndPassword } from "../lib/firebase.js"
 export const register = () => {
   const registerDiv = document.createElement("div")
-
-  let viewRegister = /*html*/
+  let viewRegister =
     `
     <header id="header">
     <div class="container__header">
@@ -77,7 +76,6 @@ export const register = () => {
     </div>
   </Footer>
 </div> `
-
   registerDiv.innerHTML = viewRegister
   let registerButton = registerDiv.querySelector("#register")
   let email = registerDiv.querySelector("#userSignUp").value

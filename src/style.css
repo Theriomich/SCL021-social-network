@@ -1,6 +1,8 @@
- /** {
+
+/* * {
   outline: 1px solid limegreen !important;
-}*/
+} */
+
 
 * {
   padding: 0;
@@ -375,8 +377,9 @@ figure.slider figure figcaption {
   font-family: 'Astrolyte', sans-serif;
   text-shadow: 0 0 30px #fff;
   font-size: 25px;
-  color: #005FB3;
-  margin-top: 2%;
+
+  color: 005FB3 margin-top: 2%;
+
 }
 
 .containerPages {
@@ -462,9 +465,13 @@ REVISAR PARA RESPONSIVE
 }
 
 .simple {
-  color: #005FB3;
+
+
+  color: 005FB3;
   font-family: 'Astrolyte', sans-serif;
   font-size: 15px;
+
+
 }
 
 .test {
