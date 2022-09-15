@@ -1,4 +1,3 @@
-
 /* * {
   outline: 1px solid limegreen !important;
 } */
@@ -378,7 +377,8 @@ figure.slider figure figcaption {
   text-shadow: 0 0 30px #fff;
   font-size: 25px;
 
-  color: 005FB3 margin-top: 2%;
+  color: #005FB3;
+  margin-top: 2%;
 
 }
 
@@ -398,6 +398,7 @@ figure.slider figure figcaption {
   font-family: 'Astrolyte', sans-serif;
   text-shadow: 0 0 30px #fff;
 }
+
 /*@media only screen and (max-width: 800px) {
   .containerPages,
   .register-container,
@@ -512,6 +513,7 @@ footer {
 }
 
 .logo_footer {}
+
 /*********WALL********/
 
 .wall-container {
@@ -521,21 +523,23 @@ footer {
   width: 100%;
   height: 100%;
 }
-.post-message
-  {
+
+.post-message {
   border-radius: 15px;
   width: 400px;
-  padding: 15px;  
+  padding: 15px;
   border-color: #97d9e1;
   font-family: "Astrolyte";
 }
+
 .containerWall {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 8%;
 }
-.user-icon{
+
+.user-icon {
   height: 100%;
   display: flex;
   justify-content: left;
@@ -543,9 +547,10 @@ footer {
   margin-top: 3%;
   margin-left: 15%;
 }
+
 .saludoUser {
   font-family: 'Astrolyte', sans-serif;
-  font-size:20px;
+  font-size: 20px;
   color: #005FB3;
   margin-top: 1%;
   margin-left: 8%;

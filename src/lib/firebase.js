@@ -4,14 +4,14 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-import {
+export {
   getAuth,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
-  updateProfile,
+  // updateProfile,
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 // Your web app's Firebase configuration
@@ -43,6 +43,21 @@ export const logOut = () => {
       // console.log(error);
     });
 };
+
+
+
+const auth = getAuth();
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed in 
+    const user = userCredential.user;
+    // ...
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // ..
+  });
 
 export const observer = () => {
   onAuthStateChanged(auth, (user) => {
