@@ -1,4 +1,9 @@
 // import { registerButton } from "../lib/index.js"
+
+import { createUser } from "../lib/firebase.js";
+
+// import { auth } from "../lib/firebase.js";
+
 // import { getAuth, createUserWithEmailAndPassword } from "../lib/firebase.js"
 export const register = () => {
   const registerDiv = document.createElement("div")
@@ -40,6 +45,7 @@ export const register = () => {
         placeholder="Contraseña"
         maxlength="10"
         autocomplete="current-password"
+        required
       />
       <input
       class="Inputs-L"
@@ -48,10 +54,11 @@ export const register = () => {
       placeholder="Repetir contraseña"
       maxlength="10"
       autocomplete="current-password"
+      required
     />
       <br/>
       <a href="#" ><h5 class="simple" >¿Olvidaste tu Contraseña?</h5></a>
-      <button class="buttonL" id="register" onClick= "location.href = 'login.html'" onClick=""  type="submit">Regístrar</button>
+      <button class="buttonL" id="register"   type="submit">Regístrar</button>
       
     </section>
     <h5 class="test" >Ingresa con</h5>
@@ -77,34 +84,21 @@ export const register = () => {
   </Footer>
 </div> `
   registerDiv.innerHTML = viewRegister
-  let registerButton = registerDiv.querySelector("#register")
-  let email = registerDiv.querySelector("#userSignUp").value
-  let password = registerDiv.querySelector("#passwordSignUp").value
-  console.log(email);
-  console.log(password);
-  if (registerButton !== null) {
-    registerButton.addEventListener("click", (event) => {
-      event.preventDefault();
+  let remPassword = registerDiv.querySelector("#passwordValidate").value;
+  registerDiv.querySelector("#register").addEventListener("click", function () {
+    let email = registerDiv.querySelector("#userSignUp").value;
+    let password = registerDiv.querySelector("#passwordSignUp").value;
+    createUser(email, password);
 
-      const auth = getAuth();
-      createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
-          // ...
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-          // ..
-        });
-    });
-  }
-  function registerUser() {
-  }
-  // addEventListener("click", function () {
-  //   console.log("diste un click")
-  // });
+
+
+
+    console.log(email)
+    console.log(password)
+  });
+
+
+
   return registerDiv
 }
 

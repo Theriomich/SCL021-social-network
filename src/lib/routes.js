@@ -11,9 +11,9 @@ export const routes = {
   '/wall': wall(),
 };
 const rootDiv = document.getElementById('root');
-rootDiv.innerHTML = routes[window.location.pathname];
+rootDiv.appendChild(routes[window.location.pathname]);
 
-const onNavigate = (pathname) => {
+export const onNavigate = (pathname) => {
   window.history.pushState(
     {},
     pathname,
