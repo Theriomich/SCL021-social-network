@@ -496,6 +496,8 @@ REVISAR PARA RESPONSIVE
   margin: 5px;
   width: 30px;
   height: 29px;
+  margin-right: 5%;
+  margin-top: 1%;
 }
 
 .logo {
@@ -504,6 +506,7 @@ REVISAR PARA RESPONSIVE
   height: 29px;
   text-align: center;
   padding: 0%;
+
 }
 
 /*********FOOTER******/
@@ -554,4 +557,9 @@ footer {
   color: #005FB3;
   margin-top: 1%;
   margin-left: 8%;
+}
+
+#googleButton {
+  border: none;
+  background: none;
 }

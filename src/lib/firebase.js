@@ -12,7 +12,9 @@ import {
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
-  // updateProfile,
+  signInWithPopup,
+  sendEmailVerification,
+  FacebookAuthProvider
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 // Your web app's Firebase configuration
@@ -153,11 +155,37 @@ export function createUserGoogle(googleL) {
     });
 };
 
-// const authGoogle = getAuth();
-// export function createUserGoogle(googleL) {
-//   sendEmailVerification(authGoogle.currentUser)
-//     .then(() => {
-//       "Email verification sent!"
+const authVerification = getAuth();
+export function verificateEmail() {
+  sendEmailVerification(authVerification.currentUser)
+    .then(() => {
+      // Email verification sent!
+      // ...
+    });
+}
 
-//     });
-// }
+const authFacebook = getAuth();
+export function facebookLogin(facebookL) {
+  signInWithPopup(authFacebook, provider)
+    .then((result) => {
+      // The signed-in user info.
+      const user = result.user;
+
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      const credential = FacebookAuthProvider.credentialFromResult(result);
+      const accessToken = credential.accessToken;
+
+      // ...
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The AuthCredential type that was used.
+      const credential = FacebookAuthProvider.credentialFromError(error);
+
+      // ...
+    });
+}
