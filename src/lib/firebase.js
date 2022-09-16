@@ -128,3 +128,36 @@ export const loginWithGoogle = () => {
 export const registerPage = () => {
   console.log("diste un click")
 };
+
+;
+
+const googleAuth = getAuth();
+export function createUserGoogle(googleL) {
+  signInWithPopup(googleAuth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      // ...
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+};
+
+// const authGoogle = getAuth();
+// export function createUserGoogle(googleL) {
+//   sendEmailVerification(authGoogle.currentUser)
+//     .then(() => {
+//       "Email verification sent!"
+
+//     });
+// }
