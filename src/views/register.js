@@ -1,6 +1,6 @@
 // import { registerButton } from "../lib/index.js"
 
-import { auth } from "../lib/firebase";
+import { createUser } from "../lib/firebase.js";
 
 // import { auth } from "../lib/firebase.js";
 
@@ -58,7 +58,7 @@ export const register = () => {
     />
       <br/>
       <a href="#" ><h5 class="simple" >¿Olvidaste tu Contraseña?</h5></a>
-      <button class="buttonL" id="register" onClick= "location.href = 'login.html'" onClick=""  type="submit">Regístrar</button>
+      <button class="buttonL" id="register"   type="submit">Regístrar</button>
       
     </section>
     <h5 class="test" >Ingresa con</h5>
@@ -84,10 +84,13 @@ export const register = () => {
   </Footer>
 </div> `
   registerDiv.innerHTML = viewRegister
-  let email = registerDiv.querySelector("#userSignUp").value;
-  let password = registerDiv.querySelector("#passwordSignUp").value;
+  let remPassword = registerDiv.querySelector("#passwordValidate").value;
   registerDiv.querySelector("#register").addEventListener("click", function () {
-    auth(email, password)
+    let email = registerDiv.querySelector("#userSignUp").value;
+    let password = registerDiv.querySelector("#passwordSignUp").value;
+    createUser(email, password);
+
+
 
 
     console.log(email)

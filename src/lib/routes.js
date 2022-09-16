@@ -13,7 +13,7 @@ export const routes = {
 const rootDiv = document.getElementById('root');
 rootDiv.appendChild(routes[window.location.pathname]);
 
-const onNavigate = (pathname) => {
+export const onNavigate = (pathname) => {
   window.history.pushState(
     {},
     pathname,

@@ -1,4 +1,4 @@
-/*import { userLogin, loginWithGoogle } from '../lib/firebase.js';*/
+import { onNavigate } from "../lib/routes.js"
 
 //export const welcomePage = () => {
 //  const containerwelcome = document.createElement('section');
@@ -63,7 +63,7 @@ export const welcome = () => {
   </div>
 </div> `
   welcomeDiv.innerHTML = viewWelcome
-  return viewWelcome
+  return welcomeDiv
 }
 
 //containerwelcome.innerHTML = viewwelcome;
