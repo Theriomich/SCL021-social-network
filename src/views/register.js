@@ -1,6 +1,7 @@
 // import { registerButton } from "../lib/index.js"
 
-import { createUser, createUserGoogle, } from "../lib/firebase.js";
+
+import { createUser, createUserGoogle, verificateEmail, facebookLogin } from "../lib/firebase.js";
 
 // import { auth } from "../lib/firebase.js";
 
@@ -71,12 +72,17 @@ export const register = () => {
           alt="google-logo"
         />
         </button>
+<<<<<<< HEAD
+=======
+        <button id= "facebookButton"> 
+>>>>>>> ab512b597ea1483f11e7f83607e756e793b4f3c3
         <img
           class="logo"
           id="facebookLogo"
           src="utilitys/img/Fb.svg"
           alt="facebook-logo"
         />
+        </button>
     </div></center>
   </div>
   <Footer>
@@ -96,11 +102,20 @@ export const register = () => {
 
   });
 
-let googleL =registerDiv.querySelector("#googleButton").addEventListener("click", function () {
+  registerDiv.querySelector("#googleButton").addEventListener("click", function () {
+
+    let googleL = registerDiv.querySelector("#googleLogo")
     createUserGoogle(googleL);
+    verificateEmail();
   });
 
-  
+
+  registerDiv.querySelector("#facebookButton").addEventListener("click", function () {
+    let facebookL = registerDiv.querySelector("#facebookLogo")
+    facebookLogin(facebookL);
+  });
+
+
 
   return registerDiv
 }

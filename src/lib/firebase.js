@@ -13,7 +13,9 @@ import {
   GoogleAuthProvider,
   signOut,
   onAuthStateChanged,
-  // updateProfile,
+  signInWithPopup,
+  sendEmailVerification,
+  FacebookAuthProvider
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 // Your web app's Firebase configuration
@@ -123,3 +125,62 @@ export function createUserGoogle (googleL) {
 export const registerPage = () => {
   console.log("diste un click")
 };
+
+;
+
+const googleAuth = getAuth();
+export function createUserGoogle(googleL) {
+  signInWithPopup(googleAuth, provider)
+    .then((result) => {
+      // This gives you a Google Access Token. You can use it to access the Google API.
+      const credential = GoogleAuthProvider.credentialFromResult(result);
+      const token = credential.accessToken;
+      // The signed-in user info.
+      const user = result.user;
+      // ...
+    }).catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The AuthCredential type that was used.
+      const credential = GoogleAuthProvider.credentialFromError(error);
+      // ...
+    });
+};
+
+const authVerification = getAuth();
+export function verificateEmail() {
+  sendEmailVerification(authVerification.currentUser)
+    .then(() => {
+      // Email verification sent!
+      // ...
+    });
+}
+
+const authFacebook = getAuth();
+export function facebookLogin(facebookL) {
+  signInWithPopup(authFacebook, provider)
+    .then((result) => {
+      // The signed-in user info.
+      const user = result.user;
+
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      const credential = FacebookAuthProvider.credentialFromResult(result);
+      const accessToken = credential.accessToken;
+
+      // ...
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // The email of the user's account used.
+      const email = error.email;
+      // The AuthCredential type that was used.
+      const credential = FacebookAuthProvider.credentialFromError(error);
+
+      // ...
+    });
+}
