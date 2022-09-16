@@ -1,6 +1,6 @@
 // import { registerButton } from "../lib/index.js"
 
-import { createUser } from "../lib/firebase.js";
+import { createUser, createUserGoogle, } from "../lib/firebase.js";
 
 // import { auth } from "../lib/firebase.js";
 
@@ -63,15 +63,19 @@ export const register = () => {
     </section>
     <h5 class="test" >Ingresa con</h5>
     <center><div class="logo-container">
-        <img
+    <button id= "googleButton"> 
+    <img
           class="logo"
+          id= "googleLogo"
           src="utilitys/img/logo-google.png"
           alt="google-logo"
         />
+        </button>
         <img
           class="logo"
+          id="facebookLogo"
           src="utilitys/img/Fb.svg"
-          alt="google-logo"
+          alt="facebook-logo"
         />
     </div></center>
   </div>
@@ -90,16 +94,13 @@ export const register = () => {
     let password = registerDiv.querySelector("#passwordSignUp").value;
     createUser(email, password);
 
-
-
-
-    console.log(email)
-    console.log(password)
   });
 
+let googleL =registerDiv.querySelector("#googleButton").addEventListener("click", function () {
+    createUserGoogle(googleL);
+  });
 
+  
 
   return registerDiv
 }
-
-
