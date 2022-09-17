@@ -72,10 +72,7 @@ export const register = () => {
           alt="google-logo"
         />
         </button>
-<<<<<<< HEAD
-=======
         <button id= "facebookButton"> 
->>>>>>> ab512b597ea1483f11e7f83607e756e793b4f3c3
         <img
           class="logo"
           id="facebookLogo"
