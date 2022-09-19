@@ -60,14 +60,18 @@ export function createUser(email, password) {
       console.log(user)
       // ...
     })
+    .then(function(){
+      verificateEmail()
+    })
     .catch((error) => {
       console.log(error)
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
     });
+    
 }
-export const observer = () => {
+/*export const observer = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
       window.location.hash = '/wall';
@@ -79,7 +83,7 @@ export const observer = () => {
       }
     }
   });
-};
+};*/
 
 export const userLogin = () => {
   const loginEmail = document.getElementById('emailLogin').value;
@@ -88,7 +92,7 @@ export const userLogin = () => {
     alert('email o contraseña no ingresados');
   } else {
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-      .then((userCredential) => {
+      .then((userCredential  ) => {
         const user = userCredential.user;
         // const mail = userCredential.user.mail;
         return user;
@@ -114,7 +118,7 @@ export const loginWithGoogle = () => {
       // console.log('usuario creado con google');
       return `${user} + logged in with google + ${token}`;
     })
-    .catch((error) => {
+      .catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -144,7 +148,12 @@ export function createUserGoogle(googleL) {
       // The signed-in user info.
       const user = result.user;
       // ...
-    }).catch((error) => {
+    })
+    //validar envio de correo en google
+    .then(function(){
+      verificateEmail()
+    })
+    .catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -160,7 +169,7 @@ const authVerification = getAuth();
 export function verificateEmail() {
   sendEmailVerification(authVerification.currentUser)
     .then(() => {
-      // Email verification sent!
+      alert('Se ha enviado una confirmación a su correo, por favor válide antes de empezar.');
       // ...
     });
 }

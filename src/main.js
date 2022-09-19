@@ -13,7 +13,8 @@ const onNavigate = (pathname) => {
     rootDiv.appendChild(routes[pathname])
 }
 window.onpopstate = () => {
-    rootDiv.innerHTML = routes[window.location.pathname]
+    //rootDiv.innerHTML = routes[window.location.pathname]
+    root.appendChild(routes[window.location.pathname])
 }
 
 
