@@ -496,7 +496,7 @@ REVISAR PARA RESPONSIVE
   margin: 5px;
   width: 30px;
   height: 29px;
-  margin-right: 3%;
+  margin-right: 4%;
   margin-top: 1%;
 }
 
@@ -560,11 +560,6 @@ footer {
 }
 
 #googleButton {
-  border: none;
-  background: none;
-}
-
-#facebookButton {
   border: none;
   background: none;
 }

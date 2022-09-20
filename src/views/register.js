@@ -1,11 +1,8 @@
-// import { registerButton } from "../lib/index.js"
 
 
-import { createUser, createUserGoogle, verificateEmail, facebookLogin } from "../lib/firebase.js";
 
-// import { auth } from "../lib/firebase.js";
+import { createUser, createUserGoogle, facebookLogin } from "../lib/firebase.js";
 
-// import { getAuth, createUserWithEmailAndPassword } from "../lib/firebase.js"
 export const register = () => {
   const registerDiv = document.createElement("div")
   let viewRegister =
@@ -102,8 +99,7 @@ export const register = () => {
   registerDiv.querySelector("#googleButton").addEventListener("click", function () {
     let googleL = registerDiv.querySelector("#googleLogo")
     createUserGoogle(googleL);
-    //verificateEmail();
-  });
+    });
 
 
   registerDiv.querySelector("#facebookButton").addEventListener("click", function () {
