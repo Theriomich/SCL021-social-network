@@ -510,12 +510,26 @@ REVISAR PARA RESPONSIVE
 }
 
 /*********FOOTER******/
-footer {
-  width: 100%;
-  height: 100%;
+footer img {
+  width: 200%;
+  background-blend-mode: darken;
+  background-position: top;
+  position: relative;
+
 }
 
-.logo_footer {}
+.logo_footer {
+  width: 50%;
+  height: 50%;
+  background-blend-mode: darken;
+
+}
+
+.conainter__footer {
+  width: 50%;
+  height: 50%;
+  background-blend-mode: darken;
+}
 
 /*********WALL********/
 
@@ -560,6 +574,11 @@ footer {
 }
 
 #googleButton {
+  border: none;
+  background: none;
+}
+
+#facebookButton {
   border: none;
   background: none;
 }

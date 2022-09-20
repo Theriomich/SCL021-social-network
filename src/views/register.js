@@ -82,7 +82,7 @@ export const register = () => {
   <Footer>
     <div class="container__footer">
       <div class="logo_footer">
-        <img src="./utilitys/img/wd1.svg" alt="">
+        <img src="./utilitys/img/waves.gif" alt="waves">
       </div>
     </div>
   </Footer>
@@ -99,7 +99,7 @@ export const register = () => {
   registerDiv.querySelector("#googleButton").addEventListener("click", function () {
     let googleL = registerDiv.querySelector("#googleLogo")
     createUserGoogle(googleL);
-    });
+  });
 
 
   registerDiv.querySelector("#facebookButton").addEventListener("click", function () {

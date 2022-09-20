@@ -11,11 +11,11 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signOut,
-  //onAuthStateChanged,
+  onAuthStateChanged,
   signInWithPopup,
   sendEmailVerification,
   FacebookAuthProvider,
-    
+
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 // Your web app's Firebase configuration
@@ -61,30 +61,50 @@ export function createUser(email, password) {
       console.log(user)
       // ...
     })
-    .then(function(){
+    .then(function () {
       verificateEmail()
+
     })
     .catch((error) => {
       console.log(error)
       const errorCode = error.code;
       const errorMessage = error.message;
+      if (email === '' || password === '') {
+        alert('email o contraseña no ingresados');
+      }
+
+      // if (email === errorCode || errorMessage === error) {
+      //   alert('Este usuario ya se encuentra registrado');
+      // }
+
       // ..
     });
-    
+
 }
-/*export const observer = () => {
+export const observer = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
+      user.FacebookAuthProvider;
+      user.GoogleAuthProvider;
+      user.authVerification;
+      user.createUser;
+      user.createUserWithEmailAndPassword;
+      user.loginWithGoogle;
+      user.userLogin;
+      user.emailSing;
+      user.getAuth
       window.location.hash = '/wall';
       const uid = user.uid;
+      console.log("existe un usuario activo")
       console.log(`bienvenida ${uid}`);
     } else if (!user) {
       if (window.location.hash !== '#/register') {
         logOut();
+        console.log("no existe un usuario activo")
       }
     }
   });
-};*/
+};
 
 /*export const userLogin = () => {
   const loginEmail = document.getElementById('emailLogin').value;
@@ -105,12 +125,12 @@ export function createUser(email, password) {
       });
   }
 };*/
-export const  userLogin = (emailSing, passwordSing) => {
-    if (emailSing === '' || passwordSing === '') {
+export const userLogin = (emailSing, passwordSing) => {
+  if (emailSing === '' || passwordSing === '') {
     alert('email o contraseña no ingresados');
   } else {
     signInWithEmailAndPassword(auth, emailSing, passwordSing)
-      .then((userCredential  ) => {
+      .then((userCredential) => {
         const user = userCredential.user;
         window.location.hash = 'wall#';
         // const mail = userCredential.user.mail;
@@ -139,7 +159,7 @@ export const loginWithGoogle = () => {
       // console.log('usuario creado con google');
       return `${user} + logged in with google + ${token}`;
     })
-      .catch((error) => {
+    .catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -171,7 +191,7 @@ export function createUserGoogle(googleL) {
       // ...
     })
     //validar envio de correo en google
-    .then(function(){
+    .then(function () {
       verificateEmail()
     })
     .catch((error) => {

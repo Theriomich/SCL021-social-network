@@ -1,4 +1,4 @@
-import { userLogin } from "../lib/firebase.js";
+import { userLogin, observer } from "../lib/firebase.js";
 /*import { routes } from "./routes.js";
 import { register } from "./register.js";
 import { welcome } from "./welcome.js";*/
@@ -65,21 +65,24 @@ export const login = () => {
           class="logo"
           src="utilitys/img/Fb.svg"
           alt="google-logo"
-        />
-    </div></center>
+        />      
+    
  </div>
 </div>  
+<div class="logo_footer">
+<img src="./utilitys/img/waves-1.gif" alt="waves">
+</div> 
+
          `
 
   loginDiv.innerHTML = handleLogin
-  
+
   loginDiv.querySelector("#signUp").addEventListener("click", function () {
     let emailSing = loginDiv.querySelector("#emailLogin").value;
     let passwordSing = loginDiv.querySelector("#passLogin").value;
-    userLogin(emailSing, passwordSing);
+    userLogin(emailSing, passwordSing); observer()
 
   });
 
   return loginDiv
 }
-  
