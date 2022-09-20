@@ -1,4 +1,4 @@
-//import { userLogin, loginWithGoogle } from "../lib/firebase.js";
+import { userLogin } from "../lib/firebase.js";
 /*import { routes } from "./routes.js";
 import { register } from "./register.js";
 import { welcome } from "./welcome.js";*/
@@ -50,7 +50,7 @@ export const login = () => {
         maxlength="30"
       />
       <br/>
-      <button class="buttonL" id="signUp" onclick="location.href='wall.html';" type="submit">
+      <button class="buttonL" id="signUp"  type="submit">
         Login
       </button>
     </section>
@@ -72,10 +72,14 @@ export const login = () => {
          `
 
   loginDiv.innerHTML = handleLogin
-  // loginDiv.querySelector("#signUp").addEventListener("click", function () {
+  
+  loginDiv.querySelector("#signUp").addEventListener("click", function () {
+    let emailSing = loginDiv.querySelector("#emailLogin").value;
+    let passwordSing = loginDiv.querySelector("#passLogin").value;
+    userLogin(emailSing, passwordSing);
 
-  // });
+  });
+
   return loginDiv
 }
-  //containerLogin.innerHTML = viewLogin;
-//}
+  

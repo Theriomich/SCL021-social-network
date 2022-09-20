@@ -11,10 +11,11 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signOut,
-  onAuthStateChanged,
+  //onAuthStateChanged,
   signInWithPopup,
   sendEmailVerification,
-  FacebookAuthProvider
+  FacebookAuthProvider,
+    
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 // Your web app's Firebase configuration
@@ -85,7 +86,7 @@ export function createUser(email, password) {
   });
 };*/
 
-export const userLogin = () => {
+/*export const userLogin = () => {
   const loginEmail = document.getElementById('emailLogin').value;
   const loginPassword = document.getElementById('passLogin').value;
   if (loginEmail === '' || loginPassword === '') {
@@ -103,7 +104,27 @@ export const userLogin = () => {
         return errorCode + errorMessage;
       });
   }
+};*/
+export const  userLogin = (emailSing, passwordSing) => {
+    if (emailSing === '' || passwordSing === '') {
+    alert('email o contraseña no ingresados');
+  } else {
+    signInWithEmailAndPassword(auth, emailSing, passwordSing)
+      .then((userCredential  ) => {
+        const user = userCredential.user;
+        window.location.hash = 'wall#';
+        // const mail = userCredential.user.mail;
+        return user;
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        return errorCode + errorMessage;
+      });
+  }
 };
+
+
 
 export const loginWithGoogle = () => {
   signInWithPopup(auth, provider)
