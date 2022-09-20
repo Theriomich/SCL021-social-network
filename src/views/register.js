@@ -92,7 +92,12 @@ export const register = () => {
   registerDiv.querySelector("#register").addEventListener("click", function () {
     let email = registerDiv.querySelector("#userSignUp").value;
     let password = registerDiv.querySelector("#passwordSignUp").value;
-    createUser(email, password);
+    if (email === '' || password === '') {
+      alert('Por favor completa todos los campos');
+    } else if (password.length < 6) {
+      alert('Tu contraseña debe ser mayor a 6 caracteres');
+    } else {  
+  createUser(email, password);}
 
   });
 

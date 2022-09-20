@@ -15,6 +15,7 @@ import {
   signInWithPopup,
   sendEmailVerification,
   FacebookAuthProvider,
+  updateProfile
     
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
@@ -33,7 +34,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-// export const auth = getAuth(app);
+//export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const providerFace = new FacebookAuthProvider();
 const db = getFirestore(app);
@@ -51,6 +52,7 @@ export const logOut = () => {
 
 
 
+/* no borrar 
 const auth = getAuth();
 export function createUser(email, password) {
   createUserWithEmailAndPassword(auth, email, password)
@@ -71,7 +73,34 @@ export function createUser(email, password) {
       // ..
     });
     
+}*/
+
+const auth = getAuth();
+export function createUser(email, password) {
+  createUserWithEmailAndPassword(auth, email, password)
+
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log(user)
+	  window.location.hash = 'login#';
+	  //updateProfile(auth.currentUser)
+      // ...
+    })
+    .then(function(){
+      verificateEmail()
+    })
+    .catch((error) => {
+      console.log(error)
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+    });
+    
 }
+
+
+
 /*export const observer = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -86,25 +115,7 @@ export function createUser(email, password) {
   });
 };*/
 
-/*export const userLogin = () => {
-  const loginEmail = document.getElementById('emailLogin').value;
-  const loginPassword = document.getElementById('passLogin').value;
-  if (loginEmail === '' || loginPassword === '') {
-    alert('email o contraseña no ingresados');
-  } else {
-    signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-      .then((userCredential  ) => {
-        const user = userCredential.user;
-        // const mail = userCredential.user.mail;
-        return user;
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        return errorCode + errorMessage;
-      });
-  }
-};*/
+
 export const  userLogin = (emailSing, passwordSing) => {
     if (emailSing === '' || passwordSing === '') {
     alert('email o contraseña no ingresados');
