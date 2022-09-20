@@ -34,6 +34,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 // export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+const providerFace = new FacebookAuthProvider();
 const db = getFirestore(app);
 
 export const logOut = () => {
@@ -59,17 +60,21 @@ export function createUser(email, password) {
       console.log(user)
       // ...
     })
+    .then(function(){
+      verificateEmail()
+    })
     .catch((error) => {
       console.log(error)
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
     });
+    
 }
-export const observer = () => {
+/*export const observer = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      window.location.hash = '#/wall';
+      window.location.hash = '/wall';
       const uid = user.uid;
       console.log(`bienvenida ${uid}`);
     } else if (!user) {
@@ -78,7 +83,7 @@ export const observer = () => {
       }
     }
   });
-};
+};*/
 
 export const userLogin = () => {
   const loginEmail = document.getElementById('emailLogin').value;
@@ -87,7 +92,7 @@ export const userLogin = () => {
     alert('email o contraseña no ingresados');
   } else {
     signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-      .then((userCredential) => {
+      .then((userCredential  ) => {
         const user = userCredential.user;
         // const mail = userCredential.user.mail;
         return user;
@@ -113,7 +118,7 @@ export const loginWithGoogle = () => {
       // console.log('usuario creado con google');
       return `${user} + logged in with google + ${token}`;
     })
-    .catch((error) => {
+      .catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -143,7 +148,12 @@ export function createUserGoogle(googleL) {
       // The signed-in user info.
       const user = result.user;
       // ...
-    }).catch((error) => {
+    })
+    //validar envio de correo en google
+    .then(function(){
+      verificateEmail()
+    })
+    .catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -159,30 +169,32 @@ const authVerification = getAuth();
 export function verificateEmail() {
   sendEmailVerification(authVerification.currentUser)
     .then(() => {
-      // Email verification sent!
+      alert('Se ha enviado una confirmación a su correo, por favor válide antes de empezar.');
       // ...
     });
 }
 
 const authFacebook = getAuth();
 export function facebookLogin(facebookL) {
-  signInWithPopup(authFacebook, provider)
+  signInWithPopup(authFacebook, providerFace)
     .then((result) => {
+      //console.log(result)
+      //console.log("facebook")
       // The signed-in user info.
-      const user = result.user;
+      //const user = result.user;
 
       // This gives you a Facebook Access Token. You can use it to access the Facebook API.
       const credential = FacebookAuthProvider.credentialFromResult(result);
-      const accessToken = credential.accessToken;
+      //const accessToken = credential.accessToken;
 
       // ...
     })
     .catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
-      const errorMessage = error.message;
+      //const errorMessage = error.message;
       // The email of the user's account used.
-      const email = error.email;
+      //const email = error.email;
       // The AuthCredential type that was used.
       const credential = FacebookAuthProvider.credentialFromError(error);
 
