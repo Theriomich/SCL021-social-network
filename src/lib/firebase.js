@@ -83,7 +83,7 @@ export function createUser(email, password) {
 }
 export const observer = () => {
   onAuthStateChanged(auth, (user) => {
-    if (user) {
+    if (user.userLogin) {
       user.FacebookAuthProvider;
       user.GoogleAuthProvider;
       user.authVerification;
@@ -97,7 +97,7 @@ export const observer = () => {
       const uid = user.uid;
       console.log("existe un usuario activo")
       console.log(`bienvenida ${uid}`);
-    } else if (!user) {
+    } else if (!user.userLogin) {
       if (window.location.hash !== '#/register') {
         logOut();
         console.log("no existe un usuario activo")
