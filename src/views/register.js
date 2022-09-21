@@ -1,6 +1,3 @@
-
-
-
 import { createUser, createUserGoogle, facebookLogin } from "../lib/firebase.js";
 
 export const register = () => {
@@ -82,11 +79,7 @@ export const register = () => {
   <Footer>
     <div class="container__footer">
       <div class="logo_footer">
-<<<<<<< HEAD
         <img src="./utilitys/img/waves.gif" alt="waves">
-=======
-      <!--img src="./utilitys/img/waves.gif" alt=""-->
->>>>>>> 2e12efcc9508956609d8f49b06d9f01dcb1e6dad
       </div>
     </div>
   </Footer>
@@ -100,8 +93,9 @@ export const register = () => {
       alert('Por favor completa todos los campos');
     } else if (password.length < 6) {
       alert('Tu contraseña debe ser mayor a 6 caracteres');
-    } else {  
-  createUser(email, password);}
+    } else {
+      createUser(email, password);
+    }
 
   });
 

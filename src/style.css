@@ -510,28 +510,6 @@ REVISAR PARA RESPONSIVE
 }
 
 /*********FOOTER******/
-<<<<<<< HEAD
-footer img {
-  width: 200%;
-  background-blend-mode: darken;
-  background-position: top;
-  position: relative;
-
-}
-
-.logo_footer {
-  width: 50%;
-  height: 50%;
-  background-blend-mode: darken;
-
-}
-
-.conainter__footer {
-  width: 50%;
-  height: 50%;
-  background-blend-mode: darken;
-}
-=======
 .container__footer {
 
   display: flex;
@@ -540,9 +518,9 @@ footer img {
   background-image: url("utilitys/img/waves.gif");
   height: 100%;
   width: 100%;
-  }
-  
->>>>>>> 2e12efcc9508956609d8f49b06d9f01dcb1e6dad
+  background-blend-mode: darken;
+}
+
 
 /*********WALL********/
 

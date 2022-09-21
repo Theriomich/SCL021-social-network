@@ -68,7 +68,6 @@ export function createUser(email, password) {
     })
     .then(function () {
       verificateEmail()
-
     })
     .catch((error) => {
       console.log(error)
@@ -92,11 +91,10 @@ export const observer = () => {
       console.log("este usuario no esta activo")
       if (window.location.hash !== '#/register') {
         logOut();
-        console.log("no existe un usuario activo")
       }
     }
   });
-};* /
+}
 
 /**** Ingreso usuario Email/Contraseña****/
 export const userLogin = (emailSing, passwordSing) => {
