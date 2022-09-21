@@ -1,4 +1,4 @@
-import { userLogin } from "../lib/firebase.js";
+import { userLogin, loginWithGoogle, loginWithfacebook } from "../lib/firebase.js";
 /*import { routes } from "./routes.js";
 import { register } from "./register.js";
 import { welcome } from "./welcome.js";*/
@@ -56,16 +56,22 @@ export const login = () => {
     </section>
     <h5 class="test" >Ingresa con</h5>
     <center><div class="logo-container">
-        <img
+    <button id= "googleButtonL"> 
+    <img
           class="logo"
+          id= "googleLogin"
           src="utilitys/img/logo-google.png"
           alt="google-logo"
         />
+        </button>
+        <button id= "facebookButtonL"> 
         <img
           class="logo"
+          id="facebookLogin"
           src="utilitys/img/Fb.svg"
-          alt="google-logo"
+          alt="facebook-logo"
         />
+        </button>
     </div></center>
  </div>
 </div>  
@@ -77,8 +83,20 @@ export const login = () => {
     let emailSing = loginDiv.querySelector("#emailLogin").value;
     let passwordSing = loginDiv.querySelector("#passLogin").value;
     userLogin(emailSing, passwordSing);
-
   });
+
+  loginDiv.querySelector("#googleButtonL").addEventListener("click", function () {
+    let googleLogin = loginDiv.querySelector("#googleLogin")
+    loginWithGoogle(googleLogin);
+    });
+
+
+   loginDiv.querySelector("#facebookButtonL").addEventListener("click", function () {
+      let facebookL = loginDiv.querySelector("#facebookLogin")
+      loginWithfacebook(facebookLogin);
+    }); 
+
+
 
   return loginDiv
 }
