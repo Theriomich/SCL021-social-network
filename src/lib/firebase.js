@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js';
+import { onNavigate } from './routes.js';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -11,7 +12,7 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signOut,
-  //onAuthStateChanged,
+  onAuthStateChanged,
   signInWithPopup,
   sendEmailVerification,
   FacebookAuthProvider,
@@ -76,19 +77,24 @@ export function createUser(email, password) {
     
 }
 
-/*export const observer = () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      window.location.hash = '/wall';
-      const uid = user.uid;
+export const observer = () => {
+  onAuthStateChanged(auth, (userLogin) => {
+    /*if (user.userLogin) {*/
+    if (userLogin) {
+     // window.location.hash = '/wall';
+     onNavigate ("/wall")
+      const uid = userLogin.uid;
+      console.log("este usuario esta activo")
       console.log(`bienvenida ${uid}`);
-    } else if (!user) {
+    /*} else if (!use.userLoginr) {*/
+    } else if (!userLogin) {
+      console.log("este usuario no esta activo")
       if (window.location.hash !== '#/register') {
         logOut();
       }
     }
   });
-};*/
+}
 
 /**** Ingreso usuario Email/Contraseña****/
 export const  userLogin = (emailSing, passwordSing) => {
@@ -98,7 +104,9 @@ export const  userLogin = (emailSing, passwordSing) => {
     signInWithEmailAndPassword(auth, emailSing, passwordSing)
       .then((userCredential  ) => {
         const user = userCredential.user;
-        window.location.hash = 'wall#';
+        //window.location.hash = 'wall#';
+        //history.pushState({}, "", 'wall#')
+        //onNavigate ("/wall")
         console.log(user)
         return user;
       })

@@ -510,12 +510,16 @@ REVISAR PARA RESPONSIVE
 }
 
 /*********FOOTER******/
-footer {
-  width: 100%;
-  height: 100%;
-}
+.container__footer {
 
-.logo_footer {}
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("utilitys/img/waves.gif");
+  height: 100%;
+  width: 100%;
+  }
+  
 
 /*********WALL********/
 
@@ -567,4 +571,16 @@ footer {
 #facebookButton {
   border: none;
   background: none;
+}
+
+#facebookButtonL {
+  border: none;
+  background: none;
+
+}
+
+#googleButtonL {
+  border: none;
+  background: none;
+
 }
