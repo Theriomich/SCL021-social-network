@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { userLogin, observer } from "../lib/firebase.js";
+=======
+import { userLogin, observer, loginWithGoogle, loginWithfacebook } from "../lib/firebase.js";
+>>>>>>> 2e12efcc9508956609d8f49b06d9f01dcb1e6dad
 /*import { routes } from "./routes.js";
 import { register } from "./register.js";
 import { welcome } from "./welcome.js";*/
@@ -56,14 +60,20 @@ export const login = () => {
     </section>
     <h5 class="test" >Ingresa con</h5>
     <center><div class="logo-container">
-        <img
+    <button id= "googleButtonL"> 
+    <img
           class="logo"
+          id= "googleLogin"
           src="utilitys/img/logo-google.png"
           alt="google-logo"
         />
+        </button>
+        <button id= "facebookButtonL"> 
         <img
           class="logo"
+          id="facebookLogin"
           src="utilitys/img/Fb.svg"
+<<<<<<< HEAD
           alt="google-logo"
         />      
     
@@ -74,15 +84,48 @@ export const login = () => {
 </div> 
 
          `
+=======
+          alt="facebook-logo"
+        />
+        </button>
+    </div></center>
+ </div>
+ <Footer>
+ <div class="container__footer">
+   <div class="logo_footer">
+     <img src="./utilitys/img/waves.gif" alt="">
+   </div>
+ </div>
+</Footer>
+</div> `
+>>>>>>> 2e12efcc9508956609d8f49b06d9f01dcb1e6dad
 
   loginDiv.innerHTML = handleLogin
 
   loginDiv.querySelector("#signUp").addEventListener("click", function () {
     let emailSing = loginDiv.querySelector("#emailLogin").value;
     let passwordSing = loginDiv.querySelector("#passLogin").value;
+<<<<<<< HEAD
     userLogin(emailSing, passwordSing); observer()
 
+=======
+    userLogin(emailSing, passwordSing);
+    observer();
+>>>>>>> 2e12efcc9508956609d8f49b06d9f01dcb1e6dad
   });
+
+  loginDiv.querySelector("#googleButtonL").addEventListener("click", function () {
+    let googleLogin = loginDiv.querySelector("#googleLogin")
+    loginWithGoogle(googleLogin);
+    });
+
+
+   loginDiv.querySelector("#facebookButtonL").addEventListener("click", function () {
+      let facebookL = loginDiv.querySelector("#facebookLogin")
+      loginWithfacebook(facebookLogin);
+    }); 
+
+
 
   return loginDiv
 }

@@ -14,13 +14,17 @@ const rootDiv = document.getElementById('root');
 rootDiv.appendChild(routes[window.location.pathname]);
 
 export const onNavigate = (pathname) => {
+  console.log(pathname)
+  console.log(routes [pathname])
   window.history.pushState(
     {},
     pathname,
     window.location.origin + pathname
   )
-  rootDiv.innerHTML = routes[pathname]
+  rootDiv.innerHTML =" ";
+  rootDiv.appendChild (routes[pathname]);
 }
-window.onpopstate = () => {
-  rootDiv.innerHTML = routes[window.location.pathname]
-}
+/*window.onpopstate = () => {
+  rootDiv.innerHTML =" ";
+  rootDiv.appendChild (routes[window.location.pathname]); 
+}*/

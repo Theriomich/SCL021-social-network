@@ -510,6 +510,7 @@ REVISAR PARA RESPONSIVE
 }
 
 /*********FOOTER******/
+<<<<<<< HEAD
 footer img {
   width: 200%;
   background-blend-mode: darken;
@@ -530,6 +531,18 @@ footer img {
   height: 50%;
   background-blend-mode: darken;
 }
+=======
+.container__footer {
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-image: url("utilitys/img/waves.gif");
+  height: 100%;
+  width: 100%;
+  }
+  
+>>>>>>> 2e12efcc9508956609d8f49b06d9f01dcb1e6dad
 
 /*********WALL********/
 
@@ -581,4 +594,16 @@ footer img {
 #facebookButton {
   border: none;
   background: none;
+}
+
+#facebookButtonL {
+  border: none;
+  background: none;
+
+}
+
+#googleButtonL {
+  border: none;
+  background: none;
+
 }

@@ -33,8 +33,14 @@ export const wall = () => {
        <button class="buttonL" id="postBtn" type="submit">Publicar</button>
         </section>
        </div>
-    </div> 
-`
+    </div>
+    <Footer>
+    <div class="container__footer">
+       <img src="./utilitys/img/waves.gif" alt="">
+       </div>
+  </Footer>
+</div> ` 
+
     wallDiv.innerHTML = wallPage
 
     return wallDiv
