@@ -42,11 +42,12 @@ const providerFaceL = new FacebookAuthProvider();
 const db = getFirestore(app);
 
 
-export const logOut = () => {
+export const signOutUser = () => {
   signOut(auth)
     .then(() => {
-      window.location.hash = '#/welcome';
-      // console.log(`bai bai`);
+      //window.location.hash = '#/welcome';
+      onNavigate ("/welcome")
+      console.log(`bai bai`);
     })
     .catch((error) => {
       // console.log(error);
