@@ -1,6 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js';
+import { onNavigate } from './routes.js';
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -15,6 +16,7 @@ import {
   signInWithPopup,
   sendEmailVerification,
   FacebookAuthProvider,
+  updateProfile
 
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
@@ -33,16 +35,19 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-// export const auth = getAuth(app);
+//export const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
 const providerFace = new FacebookAuthProvider();
+const providerFaceL = new FacebookAuthProvider();
 const db = getFirestore(app);
 
-export const logOut = () => {
+
+export const signOutUser = () => {
   signOut(auth)
     .then(() => {
-      window.location.hash = '#/welcome';
-      // console.log(`bai bai`);
+      //window.location.hash = '#/welcome';
+      onNavigate ("/welcome")
+      console.log(`bai bai`);
     })
     .catch((error) => {
       // console.log(error);
@@ -50,81 +55,49 @@ export const logOut = () => {
 };
 
 
-
+/**** Creando usuario Email/Contraseña****/
 const auth = getAuth();
 export function createUser(email, password) {
   createUserWithEmailAndPassword(auth, email, password)
-
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
       console.log(user)
+      window.location.hash = 'login#';
+      //updateProfile(auth.currentUser)
       // ...
     })
     .then(function () {
       verificateEmail()
-
     })
     .catch((error) => {
       console.log(error)
       const errorCode = error.code;
       const errorMessage = error.message;
-      if (email === '' || password === '') {
-        alert('email o contraseña no ingresados');
-      }
-
-      // if (email === errorCode || errorMessage === error) {
-      //   alert('Este usuario ya se encuentra registrado');
-      // }
-
-      // ..
     });
 
 }
+
 export const observer = () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user.userLogin) {
-      user.FacebookAuthProvider;
-      user.GoogleAuthProvider;
-      user.authVerification;
-      user.createUser;
-      user.createUserWithEmailAndPassword;
-      user.loginWithGoogle;
-      user.userLogin;
-      user.emailSing;
-      user.getAuth
-      window.location.hash = '/wall';
-      const uid = user.uid;
-      console.log("existe un usuario activo")
+  onAuthStateChanged(auth, (userLogin) => {
+    /*if (user.userLogin) {*/
+    if (userLogin) {
+      // window.location.hash = '/wall';
+      onNavigate("/wall")
+      const uid = userLogin.uid;
+      console.log("este usuario esta activo")
       console.log(`bienvenida ${uid}`);
-    } else if (!user.userLogin) {
+      /*} else if (!use.userLoginr) {*/
+    } else if (!userLogin) {
+      console.log("este usuario no esta activo")
       if (window.location.hash !== '#/register') {
         logOut();
-        console.log("no existe un usuario activo")
       }
     }
   });
-};
+}
 
-/*export const userLogin = () => {
-  const loginEmail = document.getElementById('emailLogin').value;
-  const loginPassword = document.getElementById('passLogin').value;
-  if (loginEmail === '' || loginPassword === '') {
-    alert('email o contraseña no ingresados');
-  } else {
-    signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-      .then((userCredential  ) => {
-        const user = userCredential.user;
-        // const mail = userCredential.user.mail;
-        return user;
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        return errorCode + errorMessage;
-      });
-  }
-};*/
+/**** Ingreso usuario Email/Contraseña****/
 export const userLogin = (emailSing, passwordSing) => {
   if (emailSing === '' || passwordSing === '') {
     alert('email o contraseña no ingresados');
@@ -132,21 +105,23 @@ export const userLogin = (emailSing, passwordSing) => {
     signInWithEmailAndPassword(auth, emailSing, passwordSing)
       .then((userCredential) => {
         const user = userCredential.user;
-        window.location.hash = 'wall#';
-        // const mail = userCredential.user.mail;
+        //window.location.hash = 'wall#';
+        //history.pushState({}, "", 'wall#')
+        //onNavigate ("/wall")
+        console.log(user)
         return user;
       })
       .catch((error) => {
         const errorCode = error.code;
         const errorMessage = error.message;
         return errorCode + errorMessage;
+        console.log(error)
       });
   }
 };
 
-
-
-export const loginWithGoogle = () => {
+/**** Ingreso usuario con Google****/
+export const loginWithGoogle = (googleLogin) => {
   signInWithPopup(auth, provider)
     // getRedirectResult(auth)
     .then((result) => {
@@ -173,12 +148,11 @@ export const loginWithGoogle = () => {
     });
 };
 
-export const registerPage = () => {
+/*export const registerPage = () => {
   console.log("diste un click")
-};
+};*/
 
-;
-
+/**** Creando usuario con Google****/
 const googleAuth = getAuth();
 export function createUserGoogle(googleL) {
   signInWithPopup(googleAuth, provider)
@@ -206,6 +180,36 @@ export function createUserGoogle(googleL) {
     });
 };
 
+/**** Ingreso usuario con Facebook desde login****/
+const authFacebookL = getAuth();
+export function loginWithfacebook(facebookLogin) {
+  signInWithPopup(authFacebookL, providerFaceL)
+    .then((result) => {
+      //console.log(result)
+      //console.log("facebook")
+      // The signed-in user info.
+      //const user = result.user;
+
+      // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+      const credential = FacebookAuthProvider.credentialFromResult(result);
+      //const accessToken = credential.accessToken;
+
+      // ...
+    })
+    .catch((error) => {
+      // Handle Errors here.
+      const errorCode = error.code;
+      //const errorMessage = error.message;
+      // The email of the user's account used.
+      //const email = error.email;
+      // The AuthCredential type that was used.
+      const credential = FacebookAuthProvider.credentialFromError(error);
+
+      // ...
+    });
+}
+
+/**** Envio email de verificacion****/
 const authVerification = getAuth();
 export function verificateEmail() {
   sendEmailVerification(authVerification.currentUser)
@@ -215,6 +219,7 @@ export function verificateEmail() {
     });
 }
 
+/**** Ingreso usuario con Facebook desde  registro****/
 const authFacebook = getAuth();
 export function facebookLogin(facebookL) {
   signInWithPopup(authFacebook, providerFace)

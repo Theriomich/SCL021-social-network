@@ -1,3 +1,6 @@
+import {  signOutUser } from "../lib/firebase.js";
+
+
 export const wall = () => {
     const wallDiv = document.createElement("div")
     let wallPage = `
@@ -11,9 +14,9 @@ export const wall = () => {
             <nav id="nav">
                 <ul>
                     <li><a href="/"  class="select" onclick="onNavigate('/'); return false;">HOME</a></li>
-                    <li><a href="register#" onclick="onNavigate('/register'); return false;">REGISTER</a></li>
+                    <!--li><a href="register#" onclick="onNavigate('/register'); return false;">REGISTER</a></li>
                     <li><a href="login#" onclick="onNavigate('/login'); return false;">LOGIN</a></li>
-                    <li><a href="wall#" id="logout">CIERRE SESION</a></li>
+                    <li><a href="wall#" id="logout">CIERRE SESION</a></li-->
                 </ul>
             </nav>          
             <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
@@ -31,11 +34,24 @@ export const wall = () => {
           placeholder="Comparte  tu opinión  y/o Tips"></textarea>
           </div>
        <button class="buttonL" id="postBtn" type="submit">Publicar</button>
+       <button class="buttonL" id="logOut" type="submit">Cierre de Sesión</button>
         </section>
        </div>
-    </div> 
-`
+    </div>
+    <Footer>
+    <div class="container__footer">
+       <img src="./utilitys/img/waves.gif" alt="">
+       </div>
+  </Footer>
+</div> ` 
+
     wallDiv.innerHTML = wallPage
+
+
+    const logOut = wallDiv.querySelector("#logOut");
+    logOut.addEventListener('click', () => {
+    signOutUser();
+    });
 
     return wallDiv
 }
