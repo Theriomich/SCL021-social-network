@@ -46,8 +46,8 @@ export const signOutUser = () => {
   signOut(auth)
     .then(() => {
       //window.location.hash = '#/welcome';
-      onNavigate ("/welcome")
-      console.log(`bai bai`);
+      onNavigate("/")
+      console.log(`Adios`);
     })
     .catch((error) => {
       // console.log(error);
@@ -63,7 +63,8 @@ export function createUser(email, password) {
       // Signed in 
       const user = userCredential.user;
       console.log(user)
-      window.location.hash = 'login#';
+      //window.location.hash = 'login#';
+      onNavigate("/login")
       //updateProfile(auth.currentUser)
       // ...
     })
@@ -90,9 +91,10 @@ export const observer = () => {
       /*} else if (!use.userLoginr) {*/
     } else if (!userLogin) {
       console.log("este usuario no esta activo")
-      if (window.location.hash !== '#/register') {
-        logOut();
-      }
+      onNavigate("/register")
+      //if (window.location.hash !== '#/register') {
+      // logOut();
+      //}
     }
   });
 }
