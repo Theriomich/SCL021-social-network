@@ -15,7 +15,8 @@ rootDiv.appendChild(routes[window.location.pathname]);
 
 export const onNavigate = (pathname) => {
   console.log(pathname)
-  console.log(routes [pathname])
+  //console.log(routes [pathname]) este era el que estaba y agregue el de abajo para prueba.
+  console.log(routes [window.location.pathname])
   window.history.pushState(
     {},
     pathname,

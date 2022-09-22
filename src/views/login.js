@@ -1,14 +1,5 @@
 import { userLogin, observer, loginWithGoogle, loginWithfacebook } from "../lib/firebase.js";
-/*import { routes } from "./routes.js";
-import { register } from "./register.js";
-import { welcome } from "./welcome.js";*/
 
-
-//export const login = () 
-// {
-//const containerLogin = document.createElement("section");
-//containerLogin.className = "view-container";
-//const viewLogin = 
 export const login = () => {
   const loginDiv = document.createElement("div")
   let handleLogin =
@@ -24,7 +15,7 @@ export const login = () => {
                   <li><a href="/"  class="select" onclick="onNavigate('/'); return false;">HOME</a></li>
                   <li><a href="register#" onclick="onNavigate('/register'); return false;">REGISTER</a></li>
                   <li><a href="login#" onclick="onNavigate('/login'); return false;">LOGIN</a></li>
-                  <li><a href="wall#" onclick="onNavigate('/wall'); return false;">WALL</a></li>
+                  <!--li><a href="wall#" onclick="onNavigate('/wall'); return false;">WALL</a></li-->
                 </ul>
             </nav>          
             <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
