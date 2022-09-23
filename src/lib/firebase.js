@@ -16,10 +16,26 @@ import {
   signInWithPopup,
   sendEmailVerification,
   FacebookAuthProvider,
-  updateProfile
+  updateProfile,
+ 
     
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  Timestamp,
+  query,
+  onSnapshot,
+  orderBy,
+  doc,
+  deleteDoc,
+  updateDoc,
+  getDoc,
+  arrayRemove,
+  arrayUnion,
+
+} from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-firestore.js';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -42,6 +58,79 @@ const providerFaceL = new FacebookAuthProvider();
 const db = getFirestore(app);
 
 
+// Creando la coleción de los usuarios
+export const userData = async (idUser, nameUser) => {
+  try {
+    const docRef = await addDoc(collection(db, 'user-data'), {
+      id: idUser,
+      name: nameUser,
+    });
+    console.log('Document written with ID: ', docRef.id);
+  } catch (e) {
+    console.error('Error adding document: ', e);
+  }
+};
+
+// Creando coleccion de post
+export const addDataPost = async (postMessage) => {
+  try {
+    const docRef = await addDoc(collection(db, 'post'), {
+      userName: auth.currentUser.displayName,
+      userId: auth.currentUser.uid,
+      userPost: postMessage,
+      likes: [],
+      likesCounter: 0,
+      datePost: Timestamp.fromDate(new Date()),
+    });
+    console.log('Document written with ID: ', docRef.id);
+  } catch (e) {
+    console.error('Error adding document: ', e);
+  }
+};
+
+// Publicar el post en pantalla
+export const printPost = (nameCollection, callback) => {
+  const q = query(collection(db, nameCollection), orderBy('datePost', 'desc'));
+  onSnapshot(q, (querySnapshot) => {
+    const posts = [];
+    querySnapshot.forEach((_doc) => {
+      posts.push({ ..._doc.data(), id: _doc.id });
+    });
+    callback(posts);
+  });
+};
+
+// función para borrar
+export const deletePost = async (postId) => {
+  const confirmation = window.confirm('¿Seguro quieres eliminar tu post?');
+  if (confirmation) {
+    await deleteDoc(doc(db, 'post', postId));
+  }
+};
+
+// Likes
+
+export const updateLikes = async (id) => {
+  const userIdentifier = auth.currentUser.uid;
+  const postRef = doc(db, 'post', id);
+  const docSnap = await getDoc(postRef);
+  const postData = docSnap.data();
+  const likesCount = postData.likesCounter;
+
+  if ((postData.likes).includes(userIdentifier)) {
+    await updateDoc(postRef, {
+      likes: arrayRemove(userIdentifier),
+      likesCounter: likesCount - 1,
+    });
+  } else {
+    await updateDoc(postRef, {
+      likes: arrayUnion(userIdentifier),
+      likesCounter: likesCount + 1,
+    });
+  }
+};
+
+//Cierre de sesión
 export const signOutUser = () => {
   signOut(auth)
     .then(() => {
@@ -56,8 +145,8 @@ export const signOutUser = () => {
 
 
 /**** Creando usuario Email/Contraseña****/
-const auth = getAuth();
-export function createUser(email, password) {
+export const auth = getAuth();
+export function createUser(email, password, name) {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in 
@@ -65,10 +154,12 @@ export function createUser(email, password) {
       console.log(user)
 	  //window.location.hash = 'login#';
     onNavigate ("/login")
-	  //updateProfile(auth.currentUser)
-      // ...
-    })
-    .then(function(){
+	  updateProfile(auth.currentUser, {
+      displayName: name,
+    });
+	//...
+	userData(auth.currentUser.uid, name);
+    //.then(function(){
       verificateEmail()
     })
     .catch((error) => {

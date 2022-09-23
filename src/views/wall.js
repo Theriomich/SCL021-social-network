@@ -1,4 +1,5 @@
-import {  signOutUser } from "../lib/firebase.js";
+import {  signOutUser, addDataPost } from "../lib/firebase.js";
+import { postView } from './post.js';
 
 
 export const wall = () => {
@@ -22,13 +23,14 @@ export const wall = () => {
             <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
         </div>
     </div>
-    <div class="user-icon">
+    <!--div class="user-icon">
           <img src="./utilitys/img/usuario.png" alt="user" />
     </div>
-    <div> <h1 class="saludoUser"> "¡Bienvenido Usuario Tech!"</h1></div>
+    <div> <h1 class="saludoUser"> "¡Bienvenido Usuario Tech!"</h1></div-->
     </header>
     <div class="containerPages">
         <div class="wall-container"> 
+    <section>
         <section class = "containerWall">
           <div class="textarea-container"><textarea class="post-message" id="postMessage" cols="10" rows="3"
           placeholder="Comparte  tu opinión  y/o Tips"></textarea>
@@ -36,6 +38,9 @@ export const wall = () => {
        <button class="buttonL" id="postBtn" type="submit">Publicar</button>
        <button class="buttonL" id="logOut" type="submit">Cierre de Sesión</button>
         </section>
+        <section class= "post-container" id="postContainer">
+        </section>
+    </section>
        </div>
     </div>
     <Footer>
@@ -47,11 +52,27 @@ export const wall = () => {
 
     wallDiv.innerHTML = wallPage
 
-
+//cierre de sesión
     const logOut = wallDiv.querySelector("#logOut");
     logOut.addEventListener('click', () => {
     signOutUser();
     });
+
+//Publicación del post
+    const buttonPublicar = wallDiv.querySelector('#postBtn');
+    buttonPublicar.addEventListener('click', () => {
+  const postMessage = wallDiv.querySelector('#postMessage').value;
+  if (postMessage === '') {
+    alert('Escribe tu publicación, por favor');
+  } else {
+    addDataPost(postMessage);
+    console.log( postMessage);
+    wallDiv.querySelector('#postMessage').value = '';
+  }
+});
+
+// Imprime la data, elimina y da like
+postView();
 
     return wallDiv
 }
