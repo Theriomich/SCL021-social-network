@@ -26,31 +26,10 @@ export const register = () => {
   <div class="register-container">
     <section class = "containerLogin">
       <h3 class="login-title">Registrarse </h3>
-      <input class="Inputs-L"  
-      id="userSignUp" 
-      type="text" 
-      placeholder="Usuario / Correo"
-      maxlength="30"
-      autocomplete="on">
-      </input>
-      <input
-        class="Inputs-L"
-        id="passwordSignUp"
-        type="password"
-        placeholder="Contraseña"
-        maxlength="10"
-        autocomplete="current-password"
-        required
-      />
-      <input
-      class="Inputs-L"
-      id="passwordValidate"
-      type="password"
-      placeholder="Repetir contraseña"
-      maxlength="10"
-      autocomplete="current-password"
-      required
-    />
+	  <input class="Inputs-L" type="text" id="signName"  placeholder="Ingresa tu nombre"></input>
+	  <input class="Inputs-L" type="text" id="userSignUp"  placeholder="Ingresa tu Correo"   maxlength="30"  autocomplete="on"></input>
+      
+      <input class="Inputs-L" type="password" id="passwordSignUp" placeholder="Ingresa contraseña" maxlength="10"  autocomplete="current-password" required ></input>
       <br/>
       <a href="#" ><h5 class="simple" >¿Olvidaste tu Contraseña?</h5></a>
       <button class="buttonL" id="register"   type="submit">Regístrar</button>
@@ -85,16 +64,17 @@ export const register = () => {
   </Footer>
 </div> `
   registerDiv.innerHTML = viewRegister
-  let remPassword = registerDiv.querySelector("#passwordValidate").value;
+  let remPassword = registerDiv.querySelector("#passwordSignUp").value;
   registerDiv.querySelector("#register").addEventListener("click", function () {
+    let name = registerDiv.querySelector('#signName').value;
     let email = registerDiv.querySelector("#userSignUp").value;
     let password = registerDiv.querySelector("#passwordSignUp").value;
-    if (email === '' || password === '') {
+    if (name === '' || email === '' || password === '') {
       alert('Por favor completa todos los campos');
     } else if (password.length < 6) {
       alert('Tu contraseña debe ser mayor a 6 caracteres');
     } else {
-      createUser(email, password);
+      createUser(email, password, name);
     }
 
   });
