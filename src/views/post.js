@@ -3,6 +3,7 @@ import {
     printPost,
     deletePost,
     updateLikes,
+    //getPost,
   } from '../lib/firebase.js';
   
   const callbackPost = (post) => {
@@ -63,6 +64,20 @@ import {
         updateLikes(postId);
       });
     });
+
+   /*// botón editar
+   const buttonEdit = document.querySelectorAll('#btnEdit');
+   buttonEdit.forEach((item) => {
+     item.addEventListener('click', async(e) => {
+       //editPost(item.value);
+   console.log("editar post")
+   console.log(item.value)
+   const doc = await getPost (item.value)
+   console.log(doc.data())
+   const post = (doc.data())
+   containerNewPost["postMessage"].value = "post.Message";
+     });
+   });*/
   
     return containerPost;
   };

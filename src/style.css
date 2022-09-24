@@ -38,11 +38,11 @@ header .logo {
   justify-content: center;
   align-items: center;
   margin-top: 2%;
-
+  margin-left: 10%;
 }
 
 .logo img {
-  width: 270%;
+  width: 370%;
 }
 
 .titulo {
@@ -156,29 +156,6 @@ body {
   /*background-image: url("utilitys/img/wallpaper.jpg");*/
 }
 
-/*.welcome {
-  background-size: cover;
-  background-attachment: fixed;
-  color: aliceblue;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}*/
-
-/*.containerHeader {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /*margin-left: 4%;
-  margin-right: 4%;
-}*/
-
-/*@media only screen and (max-width: 800px) {
-  .containerHeader {
-    font-size: 25px;
-  }
-}*/
-
 .containerWelcome {
   display: flex;
   justify-content: center;
@@ -217,6 +194,10 @@ body {
   .titulo {
     font-size: 10px;
   }
+  .saludoUser {
+    font-size: 15px;
+  }
+
 }
 
 .buttonCover {
@@ -522,22 +503,43 @@ REVISAR PARA RESPONSIVE
   
 
 /*********WALL********/
-
-.wall-container {
+.wall-container{
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  justify-content: space-around;
+/*   align-items: center; */
+align-content: center;
+margin: 1rem;
 }
 
+.textarea-container{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/***textarea post***/
 .post-message {
+  display: flex;
+  flex-direction: column;
+  resize: none;
   border-radius: 15px;
-  width: 400px;
+  width: 20rem;
   padding: 15px;
   border-color: #97d9e1;
   font-family: "Astrolyte";
+  height: auto;
+  margin-top: 20%; 
 }
+
+@media (min-width: 768px) { 
+  .post-message{
+    width: 40rem;
+    height: auto;
+  }
+  }
 
 .containerWall {
   display: flex;
@@ -546,7 +548,7 @@ REVISAR PARA RESPONSIVE
   margin-top: 8%;
 }
 
-.user-icon {
+.user-icono {
   height: 100%;
   display: flex;
   justify-content: left;
@@ -556,11 +558,14 @@ REVISAR PARA RESPONSIVE
 }
 
 .saludoUser {
+  display: flex;
+  flex-direction: column;
   font-family: 'Astrolyte', sans-serif;
   font-size: 20px;
   color: #005FB3;
-  margin-top: 1%;
+  margin-top: 7%;
   margin-left: 8%;
+  margin-bottom: 2%;
 }
 
 #googleButton {
@@ -608,7 +613,7 @@ REVISAR PARA RESPONSIVE
   display: flex;
   flex-direction: column;
   resize: none;
-  background-color: #95F2E7;
+  background-color: #aae3eb;
   border: solid #1673A8 0.063rem;
   border-radius: 0.813rem;
   margin: 1rem;
@@ -616,10 +621,22 @@ REVISAR PARA RESPONSIVE
   height: auto;
   padding: 1rem;
 }
+.post-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
 .container-buttons{
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+.buttons-editions{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 .btn-like{
   width: auto;
@@ -631,3 +648,26 @@ REVISAR PARA RESPONSIVE
   background-color: transparent;
   margin-left: 0;
 }
+/* botones de  editar y borrar */
+.btn-edit{
+  display: flex;
+  flex-direction: row;
+  border: none;
+  width: auto;
+  height: 2rem;
+  justify-content: flex-end;
+  background-color: transparent;
+}
+.btn-delete{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  border: none;
+  width: auto;
+  height: 2rem;
+  background-color: transparent;
+  
+}
+
+
+
