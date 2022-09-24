@@ -9,7 +9,8 @@ export const welcome = () => {
   const welcomeDiv = document.createElement("div")
   let viewWelcome =
     `
-    <header id="header">
+    <section class="welcome-container">
+	<header id="header">
     <div class="container__header">
         <div class="titulo">
         <h1> Tecnology Red Social</h1>
@@ -27,8 +28,8 @@ export const welcome = () => {
             <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
         </div>
     </div>
-  </header>
-  <div class="containerWelcome">
+	</header>
+	<section class="containerWelcome">
     <div class="parrafo">Bienvenidos a Social Tech, una red social de tecnología que busca la conectividad entre personas de distintas partes del mundo.</div>
       <!--base href="utilitys/img"-->
         <div id="captioned-gallery">
@@ -60,8 +61,9 @@ export const welcome = () => {
       <div class="parrafo">Nuestra meta es dar a conocer avances tecnologícos, programas para el uso profesional o recreativo y nuevos dispositivos para mejorar la calidad de vida y el funcionamiento de la sociedad, para que puedan compartir y conocer nuevas tecnologías de interés común.</div>
       <div class="buttonCover">        
       <button type="button" class="button"  id="Inicio" onclick="location.href='register.html';"> ¡Quiero Ingresar! </button>
-  </div>
-</div> `
+       </div>
+	</section> 
+</section> `
   welcomeDiv.innerHTML = viewWelcome
   return welcomeDiv
 }
