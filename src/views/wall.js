@@ -6,7 +6,8 @@ export const wall = () => {
     const wallDiv = document.createElement("div")
     let wallPage = `
 
-    <header id="header">
+    <section class="wall-container">
+	<header id="header">
     <div class="container__header">
         <div class="logo">
             <img src="./utilitys/img/logo.png" alt="">
@@ -16,44 +17,38 @@ export const wall = () => {
                 <ul>
                     <li><a href="/"  class="select" onclick="onNavigate('/'); return false;">HOME</a></li>
                     <!--li><a href="register#" onclick="onNavigate('/register'); return false;">REGISTER</a></li>
-                    <li><a href="login#" onclick="onNavigate('/login'); return false;">LOGIN</a></li>
-                    <li><a href="wall#" id="logout">CIERRE SESION</a></li-->
+                    <li><a href="login#" onclick="onNavigate('/login'); return false;">LOGIN</a></li-->
+                    <li><a href="wall#" id="logout">CIERRE SESION</a></li>
                 </ul>
             </nav>          
             <div class="btn__menu" id="btn_menu"><i class="fas fa-bars"></i></div>
         </div>
     </div>
-    <!--div class="user-icon">
+    <!--div class="user-icono">
           <img src="./utilitys/img/usuario.png" alt="user" />
-    </div>
-    <div> <h1 class="saludoUser"> "¡Bienvenido Usuario Tech!"</h1></div-->
+    </div-->
+    <div class="saludoUser"> "¡Bienvenido Usuario Tech!"</div>
     </header>
-    <div class="containerPages">
-        <div class="wall-container"> 
-    <section>
-        <section class = "containerWall">
-          <div class="textarea-container"><textarea class="post-message" id="postMessage" cols="10" rows="3"
+	<section class="containerWall id="containerNewPost">
+       <div class="textarea-container"><textarea class="post-message" id="postMessage" cols="10" rows="3"
           placeholder="Comparte  tu opinión  y/o Tips"></textarea>
-          </div>
+        </div>
        <button class="buttonL" id="postBtn" type="submit">Publicar</button>
-       <button class="buttonL" id="logOut" type="submit">Cierre de Sesión</button>
-        </section>
-        <section class= "post-container" id="postContainer">
-        </section>
+       <!--button class="buttonL" id="logOut" type="submit">Cierre de Sesión</button-->
     </section>
-       </div>
-    </div>
+    <section class= "post-container" id="postContainer">
+    </section>
     <Footer>
-    <div class="container__footer">
+		<div class="container__footer">
        <img src="./utilitys/img/waves.gif" alt="">
-       </div>
-  </Footer>
-</div> ` 
+		</div>
+    </Footer>
+</section> ` 
 
     wallDiv.innerHTML = wallPage
 
 //cierre de sesión
-    const logOut = wallDiv.querySelector("#logOut");
+    const logOut = wallDiv.querySelector("#logout");
     logOut.addEventListener('click', () => {
     signOutUser();
     });

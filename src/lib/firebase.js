@@ -2,7 +2,6 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-app.js';
 import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-analytics.js';
 import { onNavigate } from './routes.js';
-
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -102,14 +101,13 @@ export const printPost = (nameCollection, callback) => {
 
 // función para borrar
 export const deletePost = async (postId) => {
-  const confirmation = window.confirm('¿Seguro quieres eliminar tu post?');
+  const confirmation = window.confirm('Se eliminara tu post ¿Continuar?');
   if (confirmation) {
     await deleteDoc(doc(db, 'post', postId));
   }
 };
 
 // Likes
-
 export const updateLikes = async (id) => {
   const userIdentifier = auth.currentUser.uid;
   const postRef = doc(db, 'post', id);
@@ -129,6 +127,9 @@ export const updateLikes = async (id) => {
     });
   }
 };
+
+//Prueba editar post
+//	export const getPost = (id) => getDoc(doc(db, 'post', id));
 
 //Cierre de sesión
 export const signOutUser = () => {
