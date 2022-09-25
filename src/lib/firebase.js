@@ -107,6 +107,8 @@ export const deletePost = async (postId) => {
   }
 };
 
+
+
 // Likes
 export const updateLikes = async (id) => {
   const userIdentifier = auth.currentUser.uid;
@@ -128,8 +130,16 @@ export const updateLikes = async (id) => {
   }
 };
 
-//Prueba editar post
-//	export const getPost = (id) => getDoc(doc(db, 'post', id));
+// export async function editPosts(id, input) {
+//   const postEdit = doc(db, 'Post', id);
+//   await updateDoc(postEdit, {
+//     description: input,
+//   });
+// }
+
+
+//Editar post
+export const getPost = (id) => getDoc(doc(db, 'post', id));
 
 //Cierre de sesión
 export const signOutUser = () => {

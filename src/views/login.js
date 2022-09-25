@@ -68,7 +68,7 @@ export const login = () => {
  <Footer>
  <div class="container__footer">
    <div class="logo_footer">
-     <img src="./utilitys/img/waves.gif" alt="">
+     <img src="./utilitys/img/waves-1.gif" alt="">
    </div>
  </div>
 </Footer>

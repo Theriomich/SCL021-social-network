@@ -58,7 +58,7 @@ export const register = () => {
   <Footer>
     <div class="container__footer">
       <div class="logo_footer">
-        <img src="./utilitys/img/waves.gif" alt="waves">
+        <img src="./utilitys/img/waves-1.gif" alt="waves">
       </div>
     </div>
   </Footer>
