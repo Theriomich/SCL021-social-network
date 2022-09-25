@@ -1,6 +1,6 @@
- * {
+ /* {
   outline: 1px solid limegreen !important;
-} 
+} */
 
 * {
   padding: 0;
@@ -186,6 +186,9 @@ nav ul li a {
 }
 
 @media only screen and (max-width: 800px) {
+  .containerLogin{
+    margin-top: 40%;
+  }
   .imageP {
     font-size: 10px;
   }
@@ -197,12 +200,16 @@ nav ul li a {
     margin-right: 7%;
     margin-left: 5%;
   }
+  .container__header {
+    margin-left: 10%;
+  }
   .containerWelcome {
-    margin-top: 10%;
+    margin-top: 20%;
   }
 
   .titulo {
-    font-size: 10px;
+    font-size:15px;
+    margin-top: 5%;
   }
   .saludoUser {
     font-size: 15px;
@@ -229,10 +236,12 @@ nav ul li a {
   position: relative;
 }
 @media only screen and (max-width: 800px) {
+    .Inputs-L
     .button{
       font-size: 15px;
       margin-top: 2%;
     }
+    
 }
 
 .button:hover {
@@ -393,15 +402,22 @@ REVISAR PARA RESPONSIVE
   display: flex;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
-  height: 100%;
+  height: 100vh;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .containerLogin {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-
+  margin-top: 10%;  
 }
 
 .buttonL:hover {
@@ -427,14 +443,11 @@ REVISAR PARA RESPONSIVE
 }
 
 .Inputs-L {
-  /*border-radius: 0.375rem;
-  background: #f5f6f8;
-  border: none;
-  width: 11.5rem;
-  height: 2rem;
-  margin: 1rem;*/
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
   border-radius: 15px;
-  width: 400px;
+  width: 300px;
   padding: 15px;
   border-color: #97d9e1;
   margin-top: 1%;
@@ -442,10 +455,7 @@ REVISAR PARA RESPONSIVE
 
 .Inputs-L::placeholder {
   text-align: center;
-  /*color: #037ef3;*/
-  color: #005FB3;
-  /*opacity: 0.5;*/
-  /*font-family: "Astrolyte";*/
+   color: #005FB3;
 }
 
 .simple {
@@ -474,13 +484,14 @@ REVISAR PARA RESPONSIVE
 
 .logo-container {
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   margin: 5px;
-  width: 30px;
+  /*width: 30px;
   height: 29px;
   margin-right: 4%;
-  margin-top: 1%;
+  margin-top: 1%;*/
 }
 
 .logo {
@@ -494,13 +505,14 @@ REVISAR PARA RESPONSIVE
 
 /*********FOOTER******/
 .container__footer {
-
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  /*flex-direction: column;*/
   background-image: url("utilitys/img/waves.gif");
-  height: 100%;
-  width: 100%;
+  background-repeat: space;
+  /*background-attachment: fixed;*/
+  /*height: 100%;
+  width: 100%;*/
   }
   
 
@@ -520,7 +532,7 @@ margin: 1rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
+  }
 
 /***textarea post***/
 .post-message {
@@ -533,7 +545,8 @@ margin: 1rem;
   border-color: #97d9e1;
   font-family: "Astrolyte";
   height: auto;
-  margin-top: 20%; 
+  margin-top: 20%;
+  font-size:15px ; 
 }
 
 @media (min-width: 768px) { 
