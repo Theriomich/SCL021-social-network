@@ -69,5 +69,6 @@ export const wall = () => {
     // Imprime la data, elimina y da like
     postView();
 
+
     return wallDiv
 }

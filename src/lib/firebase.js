@@ -130,12 +130,12 @@ export const updateLikes = async (id) => {
   }
 };
 
-// export async function editPosts(id, input) {
-//   const postEdit = doc(db, 'Post', id);
-//   await updateDoc(postEdit, {
-//     description: input,
-//   });
-// }
+export async function editPosts(id, input) {
+  const postEdit = doc(db, 'Post', id);
+  await updateDoc(postEdit, {
+    description: input,
+  });
+}
 
 
 //Editar post

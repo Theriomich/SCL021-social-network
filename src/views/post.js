@@ -4,6 +4,7 @@ import {
   deletePost,
   updateLikes,
   getPost,
+  //editPosts
 } from '../lib/firebase.js';
 
 const callbackPost = (post) => {
@@ -73,7 +74,8 @@ const callbackPost = (post) => {
   btnsEdit.forEach((btn) => {
     btn.addEventListener("click", async (e) => {
       try {
-        const doc = await getPost(e.target.dataset.id);
+        const doc = await getPost(btn.value);
+        console.log(e.target.dataset.idedit)
         const post = doc.data();
         containerPost["postMessage"].value = post.postMessage;
 
