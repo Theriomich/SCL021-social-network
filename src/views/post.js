@@ -33,13 +33,15 @@ import {
               <p class="counter-likes" id="counterLikes">${element.likesCounter} Me gusta</p>
             </div>
       `;
-      const templatePrintPost3 = `
+    const templatePrintPost3 = `
           </div>
         </section>
       `;
-      let templatePrintPost2 = '';
-      if (element.userId === auth.currentUser.uid) {
-        templatePrintPost2 = `
+    let editStatus = false;
+
+    let templatePrintPost2 = '';
+    if (element.userId === auth.currentUser.uid) {
+      templatePrintPost2 = `
         <div class="buttons-editions">
           <button class="btn-edit" id="btnEdit" value="${element.id}">
             <img src="./utilitys/img/edit.png" alt="editar post" class="edit-post" id="editPost">
@@ -49,28 +51,11 @@ import {
           </button>
         </div>
         `;
-      }
-      postUser.innerHTML += templatePrintPost1 + templatePrintPost2 + templatePrintPost3;
-      containerPost.appendChild(postUser);
-    };
-    post.forEach(templatesPrintPost);
-  
-    // botón de eliminar
-    const buttonDelete = document.querySelectorAll('#btnDelete');
-    buttonDelete.forEach((item) => {
-      item.addEventListener('click', () => {
-        deletePost(item.value);
-      });
-    });
-  
-    // botón de dar likes
-    const likeBtn = containerPost.querySelectorAll('.btn-like');
-    likeBtn.forEach((btnL) => {
-      btnL.addEventListener('click', () => {
-        const postId = btnL.value;
-        updateLikes(postId);
-      });
-    });
+    }
+    postUser.innerHTML += templatePrintPost1 + templatePrintPost2 + templatePrintPost3;
+    containerPost.appendChild(postUser);
+  };
+  post.forEach(templatesPrintPost);
 
    // botón editar
     const buttonEdit = document.querySelectorAll('#btnEdit');

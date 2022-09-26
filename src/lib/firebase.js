@@ -108,6 +108,8 @@ export const deletePost = async (postId) => {
   }
 };
 
+
+
 // Likes
 export const updateLikes = async (id) => {
   const userIdentifier = auth.currentUser.uid;
@@ -141,7 +143,7 @@ export const signOutUser = () => {
   signOut(auth)
     .then(() => {
       //window.location.hash = '#/welcome';
-      onNavigate ("/")
+      onNavigate("/")
       console.log(`Adios`);
     })
     .catch((error) => {
@@ -158,51 +160,51 @@ export function createUser(email, password, name) {
       // Signed in 
       const user = userCredential.user;
       console.log(user)
-	  //window.location.hash = 'login#';
-    onNavigate ("/login")
-	  updateProfile(auth.currentUser, {
-      displayName: name,
-    });
-	//...
-	userData(auth.currentUser.uid, name);
-    //.then(function(){
+      //window.location.hash = 'login#';
+      onNavigate("/login")
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      });
+      //...
+      userData(auth.currentUser.uid, name);
+      //.then(function(){
       verificateEmail()
     })
     .catch((error) => {
       console.log(error)
       const errorCode = error.code;
       const errorMessage = error.message;
-  });
-    
+    });
+
 }
 
 export const observer = () => {
   onAuthStateChanged(auth, (userLogin) => {
     /*if (user.userLogin) {*/
     if (userLogin) {
-     // window.location.hash = '/wall';
-     onNavigate ("/wall")
+      // window.location.hash = '/wall';
+      onNavigate("/wall")
       const uid = userLogin.uid;
       console.log("este usuario esta activo")
       console.log(`bienvenida ${uid}`);
-    /*} else if (!use.userLoginr) {*/
-    } else if (!userLogin) {     
+      /*} else if (!use.userLoginr) {*/
+    } else if (!userLogin) {
       console.log("este usuario no esta activo")
-      onNavigate ("/register")
+      onNavigate("/register")
       //if (window.location.hash !== '#/register') {
-       // logOut();
+      // logOut();
       //}
     }
   });
 }
 
 /**** Ingreso usuario Email/Contraseña****/
-export const  userLogin = (emailSing, passwordSing) => {
-    if (emailSing === '' || passwordSing === '') {
+export const userLogin = (emailSing, passwordSing) => {
+  if (emailSing === '' || passwordSing === '') {
     alert('email o contraseña no ingresados');
   } else {
     signInWithEmailAndPassword(auth, emailSing, passwordSing)
-      .then((userCredential  ) => {
+      .then((userCredential) => {
         const user = userCredential.user;
         //window.location.hash = 'wall#';
         //history.pushState({}, "", 'wall#')
@@ -233,7 +235,7 @@ export const loginWithGoogle = (googleLogin) => {
       // console.log('usuario creado con google');
       return `${user} + logged in with google + ${token}`;
     })
-      .catch((error) => {
+    .catch((error) => {
       // Handle Errors here.
       const errorCode = error.code;
       const errorMessage = error.message;
@@ -264,7 +266,7 @@ export function createUserGoogle(googleL) {
       // ...
     })
     //validar envio de correo en google
-    .then(function(){
+    .then(function () {
       verificateEmail()
     })
     .catch((error) => {
@@ -306,9 +308,9 @@ export function loginWithfacebook(facebookLogin) {
 
       // ...
     });
-  }
+}
 
-  /**** Envio email de verificacion****/
+/**** Envio email de verificacion****/
 const authVerification = getAuth();
 export function verificateEmail() {
   sendEmailVerification(authVerification.currentUser)

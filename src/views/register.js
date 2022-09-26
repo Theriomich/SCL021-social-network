@@ -55,29 +55,34 @@ export const register = () => {
 </section>
  <Footer>
     <div class="container__footer">
-        <img src="./utilitys/img/waves.gif" alt="">
+
+      <div class="logo_footer">
+        <img src="./utilitys/img/waves-1.gif" alt="waves">
+      </div>
+
     </div>
   </Footer>
 </section>`
   registerDiv.innerHTML = viewRegister
   let remPassword = registerDiv.querySelector("#passwordSignUp").value;
   registerDiv.querySelector("#register").addEventListener("click", function () {
-	let name = registerDiv.querySelector('#signName').value;
+    let name = registerDiv.querySelector('#signName').value;
     let email = registerDiv.querySelector("#userSignUp").value;
     let password = registerDiv.querySelector("#passwordSignUp").value;
     if (name === '' || email === '' || password === '') {
       alert('Por favor completa todos los campos');
     } else if (password.length < 6) {
       alert('Tu contraseña debe ser mayor a 6 caracteres');
-    } else {  
-  createUser(email, password, name);}
+    } else {
+      createUser(email, password, name);
+    }
 
   });
 
   registerDiv.querySelector("#googleButton").addEventListener("click", function () {
     let googleL = registerDiv.querySelector("#googleLogo")
     createUserGoogle(googleL);
-    });
+  });
 
 
   registerDiv.querySelector("#facebookButton").addEventListener("click", function () {

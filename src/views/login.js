@@ -64,15 +64,38 @@ export const login = () => {
 			</button>
 		</div>
     </section>
-    <Footer>
-      <div class="container__footer">
-       <img src="./utilitys/img/waves.gif" alt="">
-      </div>
-   </Footer>
-   </section> `
+
+    <h5 class="test" >Ingresa con</h5>
+    <center><div class="logo-container">
+    <button id= "googleButtonL"> 
+    <img
+          class="logo"
+          id= "googleLogin"
+          src="utilitys/img/logo-google.png"
+          alt="google-logo"
+        />
+        </button>
+        <button id= "facebookButtonL"> 
+        <img
+          class="logo"
+          id="facebookLogin"
+          src="utilitys/img/Fb.svg"
+          alt="facebook-logo"
+        />
+        </button>
+    </div></center>
+ </div>
+ <Footer>
+ <div class="container__footer">
+   <div class="logo_footer">
+     <img src="./utilitys/img/waves-1.gif" alt="">
+   </div>
+ </div>
+</Footer>
+</div> `
 
   loginDiv.innerHTML = handleLogin
-  
+
   loginDiv.querySelector("#signUp").addEventListener("click", function () {
     let emailSing = loginDiv.querySelector("#emailLogin").value;
     let passwordSing = loginDiv.querySelector("#passLogin").value;
@@ -83,16 +106,17 @@ export const login = () => {
   loginDiv.querySelector("#googleButtonL").addEventListener("click", function () {
     let googleLogin = loginDiv.querySelector("#googleLogin")
     loginWithGoogle(googleLogin);
-    });
+    observer();
+  });
 
 
-   loginDiv.querySelector("#facebookButtonL").addEventListener("click", function () {
-      let facebookL = loginDiv.querySelector("#facebookLogin")
-      loginWithfacebook(facebookLogin);
-    }); 
+  loginDiv.querySelector("#facebookButtonL").addEventListener("click", function () {
+    let facebookL = loginDiv.querySelector("#facebookLogin")
+    loginWithfacebook(facebookLogin);
+    observer();
+  });
 
 
 
   return loginDiv
 }
-  

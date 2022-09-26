@@ -1,4 +1,4 @@
-import {  signOutUser, addDataPost } from "../lib/firebase.js";
+import { signOutUser, addDataPost } from "../lib/firebase.js";
 import { postView } from './post.js';
 
 
@@ -42,34 +42,34 @@ export const wall = () => {
     </section>
     <Footer>
 		<div class="container__footer">
-       <img src="./utilitys/img/waves.gif" alt="">
+       <img src="./utilitys/img/waves-1.gif" alt="">
 		</div>
     </Footer>
-</section> ` 
+</section> `
 
     wallDiv.innerHTML = wallPage
 
-//cierre de sesión
+    //cierre de sesión
     const logOut = wallDiv.querySelector("#logout");
     logOut.addEventListener('click', () => {
-    signOutUser();
+        signOutUser();
     });
 
-//Publicación del post
+    //Publicación del post
     const buttonPublicar = wallDiv.querySelector('#postBtn');
     buttonPublicar.addEventListener('click', () => {
-  const postMessage = wallDiv.querySelector('#postMessage').value;
-  if (postMessage === '') {
-    alert('Escribe tu publicación, por favor');
-  } else {
-    addDataPost(postMessage);
-    console.log( postMessage);
-    wallDiv.querySelector('#postMessage').value = '';
-  }
-});
+        const postMessage = wallDiv.querySelector('#postMessage').value;
+        if (postMessage === '') {
+            alert('Escribe tu publicación, por favor');
+        } else {
+            addDataPost(postMessage);
+            console.log(postMessage);
+            wallDiv.querySelector('#postMessage').value = '';
+        }
+    });
 
-// Imprime la data, elimina y da like
-postView();
+    // Imprime la data, elimina y da like
+    postView();
 
 //const editPost = document.getElementById("postMessage");
 //console.log("aquí debo imprimir edición");
