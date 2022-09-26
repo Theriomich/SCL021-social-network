@@ -4,7 +4,7 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-
 import { onNavigate } from './routes.js';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-import { editStatus } from '../views/post.js';
+//import { editStatus } from '../views/post.js';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -348,3 +348,11 @@ export function facebookLogin(facebookL) {
       // ...
     });
 }
+// const editingPost = updateDoc;
+// export async function updatePost(id, input) {
+//   const postEdit = doc(db, 'Post', id, editingPost);
+//   await updateDoc(postEdit, {
+//     description: input,
+//   });
+// }
+

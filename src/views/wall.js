@@ -5,9 +5,8 @@ import { postView } from './post.js';
 
 
 export const wall = () => {
-    const wallDiv = document.createElement("div")
-    let wallPage = `
-
+  const wallDiv = document.createElement("div")
+  let wallPage = `
     <section class="wall-container">
 	<header id="header">
     <div class="container__header">
@@ -47,34 +46,34 @@ export const wall = () => {
     </Footer>
 </section> `
 
-    wallDiv.innerHTML = wallPage
+  wallDiv.innerHTML = wallPage
 
-    //cierre de sesión
-    const logOut = wallDiv.querySelector("#logout");
-    logOut.addEventListener('click', () => {
-        signOutUser();
-    });
+  //cierre de sesión
+  const logOut = wallDiv.querySelector("#logout");
+  logOut.addEventListener('click', () => {
+    signOutUser();
+  });
 
-    //Publicación del post
-    const buttonPublicar = wallDiv.querySelector('#postBtn');
-    buttonPublicar.addEventListener('click', () => {
-        const postMessage = wallDiv.querySelector('#postMessage').value;
-        if (postMessage === '') {
-            alert('Escribe tu publicación, por favor');
-        } else {
-            addDataPost(postMessage);
-            console.log(postMessage);
-            wallDiv.querySelector('#postMessage').value = '';
-        }
-    });
+  //Publicación del post
+  const buttonPublicar = wallDiv.querySelector('#postBtn');
+  buttonPublicar.addEventListener('click', () => {
+    const postMessage = wallDiv.querySelector('#postMessage').value;
+    if (postMessage === '') {
+      alert('Escribe tu publicación, por favor');
+    } else {
+      addDataPost(postMessage);
+      console.log(postMessage);
+      wallDiv.querySelector('#postMessage').value = '';
+    }
+  });
 
-    // Imprime la data, elimina y da like
-    postView();
+  // Imprime la data, elimina y da like
+  postView();
 
-    //const editPost = document.getElementById("postMessage");
-    //console.log("aquí debo imprimir edición");
-    //editPost("postMessage");
+  //const editPost = document.getElementById("postMessage");
+  //console.log("aquí debo imprimir edición");
+  //editPost("postMessage");
 
 
-    return wallDiv
+  return wallDiv
 }

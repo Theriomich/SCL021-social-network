@@ -125,6 +125,7 @@
      display: flex;
      justify-content: center;
      align-items: center;
+
    }
 
    .btn__menu {
@@ -163,7 +164,7 @@
    display: flex;
    flex-direction: column;
    align-items: center;
-   height: 100vh;
+   height: 100%;
    background-image: url("utilitys/img/wallpaper.jpg");
    background-size: cover;
    background-attachment: fixed;
@@ -316,15 +317,15 @@
    font-weight: 100;
    align-content: center;
    font-weight: bolder;
-   text-align: center;
+
  }
 
  div#captioned-gallery {
    width: 85%;
-   overflow: hidden;
    text-align: center;
    align-items: center;
    margin-left: 7%;
+
  }
 
  figure.slider {
@@ -340,14 +341,17 @@
    display: inline-block;
    position: inherit;
 
+
  }
 
  figure.slider img {
-   width: 30%;
+   width: 45%;
    height: auto;
    border-radius: 20px;
    object-fit: cover;
    align-items: stretch;
+
+
  }
 
  figure.slider figure figcaption {
@@ -356,10 +360,25 @@
    color: #fff;
    width: 100%;
    font-size: 13px;
-   padding: .5rem;
    align-content: center;
-   text-shadow: 0 0 30px rgb(244, 244, 247);
    font-weight: bolder;
+   text-align: center;
+   -webkit-text-stroke: #000000;
+
+ }
+
+ @media only screen and (max-width: 750px) {
+   figure.slider figure figcaption {
+     font-size: 10px
+   }
+
+ }
+
+ @media only screen and (max-width: 575px) {
+   figure.slider figure figcaption {
+     font-size: 5px
+   }
+
  }
 
  .imageP {
