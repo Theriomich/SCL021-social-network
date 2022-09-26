@@ -16,14 +16,14 @@ rootDiv.appendChild(routes[window.location.pathname]);
 export const onNavigate = (pathname) => {
   console.log(pathname)
   //console.log(routes [pathname]) este era el que estaba y agregue el de abajo para prueba.
-  console.log(routes [window.location.pathname])
+  console.log(routes[window.location.pathname])
   window.history.pushState(
     {},
     pathname,
     window.location.origin + pathname
   )
-  rootDiv.innerHTML =" ";
-  rootDiv.appendChild (routes[pathname]);
+  rootDiv.innerHTML = " ";
+  rootDiv.appendChild(routes[pathname]);
 }
 /*window.onpopstate = () => {
   rootDiv.innerHTML =" ";
