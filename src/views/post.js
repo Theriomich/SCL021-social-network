@@ -1,4 +1,5 @@
 import {
+<<<<<<< HEAD
   auth,
   printPost,
   deletePost,
@@ -6,14 +7,29 @@ import {
   getPost,
   //editPosts
 } from '../lib/firebase.js';
+=======
+    auth,
+    printPost,
+    deletePost,
+    updateLikes,
+    getPost,
+    updatePost,
+    addDataPost,
+  
+    } from '../lib/firebase.js';
+>>>>>>> fcd7813d79f9bc3e2af72e9986aced604bb5353a
 
-const callbackPost = (post) => {
-  const containerPost = document.querySelector('#postContainer');
-  containerPost.innerHTML = '';
-  const templatesPrintPost = (element) => {
-    const postUser = document.createElement('div');
-    postUser.className = 'containerPost';
-    const templatePrintPost1 = `
+  export let editStatus = false;  
+  export let id = '';
+
+  
+  const callbackPost = (post) => {
+    const containerPost = document.querySelector('#postContainer');
+    containerPost.innerHTML = '';
+    const templatesPrintPost = (element) => {
+      const postUser = document.createElement('div');
+      postUser.className = 'containerPost';
+      const templatePrintPost1 = `
         <section class="container-print-post" id="containerPrintPost">
           <div class="user-names">${element.userName}</div>
           <div id="${element.id}">
@@ -51,14 +67,32 @@ const callbackPost = (post) => {
   };
   post.forEach(templatesPrintPost);
 
-  // botón de eliminar
-  const buttonDelete = document.querySelectorAll('#btnDelete');
-  buttonDelete.forEach((item) => {
-    item.addEventListener('click', () => {
-      deletePost(item.value);
-    });
-  });
+   // botón editar
+    const buttonEdit = document.querySelectorAll('#btnEdit');
+   buttonEdit.forEach((item) => {
+     item.addEventListener('click', async(e) => {
+       //editPost(item.value);
+   console.log("editar post")
+   console.log(item.value)
+   const doc = await getPost (item.value)
+   console.log(doc.data())
+   const post = (doc.data())
+   //containerNewPost["postMessage"].value = "post.Message";
+  //taskEdit["postMessage"].value = post.Message;
+  document.getElementById("postMessage").value=post.userPost;
+  editStatus = true; 
+  id = doc.id;
+  document.getElementById("postBtn").innerText = "Update";
+ 
+ if (!editStatus)  {
+    addDataPost(postMessage.value);
+   } else {
+    updatePost(id, {userPost});
+    editStatus= false; 
+   }
+   postMessage.reset();
 
+<<<<<<< HEAD
   // botón de dar likes
   const likeBtn = containerPost.querySelectorAll('.btn-like');
   likeBtn.forEach((btnL) => {
@@ -99,3 +133,15 @@ const callbackPost = (post) => {
 export const postView = () => {
   printPost('post', callbackPost);
 };
+=======
+     });
+   });
+  
+    return containerPost;
+  };
+  
+  export const postView = () => {
+    printPost('post', callbackPost);
+  };
+  
+>>>>>>> fcd7813d79f9bc3e2af72e9986aced604bb5353a

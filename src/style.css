@@ -511,12 +511,14 @@ REVISAR PARA RESPONSIVE
  .container__footer {
    display: flex;
    justify-content: center;
+
    flex-direction: column;
    background-image: url("utilitys/img/waves-1.gif");
    height: 100%;
    width: 102%;
    background-blend-mode: darken;
  }
+
 
 
  /*********WALL********/
@@ -549,7 +551,9 @@ REVISAR PARA RESPONSIVE
    font-family: "Astrolyte";
    height: auto;
    margin-top: 20%;
+
    font-size: 15px;
+
  }
 
  @media (min-width: 768px) {

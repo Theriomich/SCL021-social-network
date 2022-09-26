@@ -55,7 +55,11 @@ export const register = () => {
 </section>
  <Footer>
     <div class="container__footer">
-        <img src="./utilitys/img/waves.gif" alt="">
+
+      <div class="logo_footer">
+        <img src="./utilitys/img/waves-1.gif" alt="waves">
+      </div>
+
     </div>
   </Footer>
 </section>`
