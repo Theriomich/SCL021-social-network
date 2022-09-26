@@ -4,7 +4,7 @@ import { getAnalytics } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-
 import { onNavigate } from './routes.js';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
+import { editStatus } from '../views/post.js';
 import {
   getAuth,
   createUserWithEmailAndPassword,
@@ -16,7 +16,7 @@ import {
   sendEmailVerification,
   FacebookAuthProvider,
   updateProfile,
- 
+  
     
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import {
@@ -82,7 +82,8 @@ export const addDataPost = async (postMessage) => {
       datePost: Timestamp.fromDate(new Date()),
     });
     console.log('Document written with ID: ', docRef.id);
-  } catch (e) {
+  }
+  catch (e) {
     console.error('Error adding document: ', e);
   }
 };
@@ -128,8 +129,12 @@ export const updateLikes = async (id) => {
   }
 };
 
-//Prueba editar post
-//	export const getPost = (id) => getDoc(doc(db, 'post', id));
+// editar post
+	export const getPost = (id) => getDoc(doc(db, 'post', id));
+
+  //actualizar post editado
+  export const updatePost = (id, newFields) =>
+  updateDoc(doc(db, "post", id), newFields);
 
 //Cierre de sesión
 export const signOutUser = () => {

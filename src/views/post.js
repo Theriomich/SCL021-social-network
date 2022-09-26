@@ -3,8 +3,15 @@ import {
     printPost,
     deletePost,
     updateLikes,
-    //getPost,
-  } from '../lib/firebase.js';
+    getPost,
+    updatePost,
+    addDataPost,
+  
+    } from '../lib/firebase.js';
+
+  export let editStatus = false;  
+  export let id = '';
+
   
   const callbackPost = (post) => {
     const containerPost = document.querySelector('#postContainer');
@@ -65,8 +72,8 @@ import {
       });
     });
 
-   /*// botón editar
-   const buttonEdit = document.querySelectorAll('#btnEdit');
+   // botón editar
+    const buttonEdit = document.querySelectorAll('#btnEdit');
    buttonEdit.forEach((item) => {
      item.addEventListener('click', async(e) => {
        //editPost(item.value);
@@ -75,9 +82,23 @@ import {
    const doc = await getPost (item.value)
    console.log(doc.data())
    const post = (doc.data())
-   containerNewPost["postMessage"].value = "post.Message";
+   //containerNewPost["postMessage"].value = "post.Message";
+  //taskEdit["postMessage"].value = post.Message;
+  document.getElementById("postMessage").value=post.userPost;
+  editStatus = true; 
+  id = doc.id;
+  document.getElementById("postBtn").innerText = "Update";
+ 
+ if (!editStatus)  {
+    addDataPost(postMessage.value);
+   } else {
+    updatePost(id, {userPost});
+    editStatus= false; 
+   }
+   postMessage.reset();
+
      });
-   });*/
+   });
   
     return containerPost;
   };

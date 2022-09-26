@@ -2,6 +2,8 @@ import {  signOutUser, addDataPost } from "../lib/firebase.js";
 import { postView } from './post.js';
 
 
+
+
 export const wall = () => {
     const wallDiv = document.createElement("div")
     let wallPage = `
@@ -68,6 +70,11 @@ export const wall = () => {
 
 // Imprime la data, elimina y da like
 postView();
+
+//const editPost = document.getElementById("postMessage");
+//console.log("aquí debo imprimir edición");
+//editPost("postMessage");
+
 
     return wallDiv
 }
