@@ -4,7 +4,8 @@ export const login = () => {
   const loginDiv = document.createElement("div")
   let handleLogin =
     `
-    <header id="header">
+    <section class="loginContainer">
+	<header id="header">
     <div class="container__header">
         <div class="logo">
             <img src="./utilitys/img/logo.png" alt="">
@@ -22,29 +23,48 @@ export const login = () => {
         </div>
     </div>
   </header>
-<div class="containerPages">
-    <div class="login-container">
-    <section class = "containerLogin">
-      <h3 class="login-title">Inicia Sesión</h3>
-     <input
-        class="Inputs-L"
-        id="emailLogin"
-        type="email"
-        placeholder="Usuario / Correo"
-        maxlength="30"
-      />
-      <input
-        class="Inputs-L"
-        id="passLogin"
-        type="password"
-        placeholder="Contraseña"
-        maxlength="30"
-      />
-      <br/>
-      <button class="buttonL" id="signUp"  type="submit">
-        Login
-      </button>
+	<section class="login-container">
+		<div  class = "containerLogin">
+			<h3 class="login-title">Inicia Sesión</h3>
+			<input
+			class="Inputs-L"
+			id="emailLogin"
+			type="email"
+			placeholder="Usuario / Correo"
+			maxlength="30"
+			/>
+			<input
+			class="Inputs-L"
+			id="passLogin"
+			type="password"
+			placeholder="Contraseña"
+			maxlength="30"
+			/>
+			<br/>
+			<button class="buttonL" id="signUp"  type="submit">
+			Login</button>
+		</div>
+			<h5 class="test" >Ingresa con</h5>
+		<div class="logo-container">
+			<button id= "googleButtonL"> 
+			<img
+			class="logo"
+			id= "googleLogin"
+			src="utilitys/img/logo-google.png"
+			alt="google-logo"
+			/>
+			</button>
+			<button id= "facebookButtonL"> 
+			<img
+			  class="logo"
+			  id="facebookLogin"
+			  src="utilitys/img/Fb.svg"
+			  alt="facebook-logo"
+			/>
+			</button>
+		</div>
     </section>
+
     <h5 class="test" >Ingresa con</h5>
     <center><div class="logo-container">
     <button id= "googleButtonL"> 

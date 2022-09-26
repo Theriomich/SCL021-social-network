@@ -4,7 +4,8 @@ export const register = () => {
   const registerDiv = document.createElement("div")
   let viewRegister =
     `
-    <header id="header">
+    <section class="registerContainer">
+	<header id="header">
     <div class="container__header">
         <div class="logo">
             <img src="./utilitys/img/logo.png" alt="">
@@ -22,47 +23,46 @@ export const register = () => {
         </div>
     </div>
   </header>
-<div class="containerPages">
-  <div class="register-container">
-    <section class = "containerLogin">
-      <h3 class="login-title">Registrarse </h3>
-	  <input class="Inputs-L" type="text" id="signName"  placeholder="Ingresa tu nombre"></input>
-	  <input class="Inputs-L" type="text" id="userSignUp"  placeholder="Ingresa tu Correo"   maxlength="30"  autocomplete="on"></input>
-      
-      <input class="Inputs-L" type="password" id="passwordSignUp" placeholder="Ingresa contraseña" maxlength="10"  autocomplete="current-password" required ></input>
-      <br/>
-      <a href="#" ><h5 class="simple" >¿Olvidaste tu Contraseña?</h5></a>
-      <button class="buttonL" id="register"   type="submit">Regístrar</button>
-      
-    </section>
-    <h5 class="test" >Ingresa con</h5>
-    <center><div class="logo-container">
-    <button id= "googleButton"> 
-    <img
-          class="logo"
-          id= "googleLogo"
-          src="utilitys/img/logo-google.png"
-          alt="google-logo"
-        />
-        </button>
-        <button id= "facebookButton"> 
-        <img
-          class="logo"
-          id="facebookLogo"
-          src="utilitys/img/Fb.svg"
-          alt="facebook-logo"
-        />
-        </button>
-    </div></center>
-  </div>
-  <Footer>
+	<section class="register-container">
+		<div class = "containerLogin">
+			<h3 class="login-title">Registrarse </h3>
+			<input class="Inputs-L" type="text" id="signName"  placeholder="Ingresa tu nombre"></input>
+			<input class="Inputs-L" type="text" id="userSignUp"  placeholder="Ingresa tu Correo"   maxlength="30"  autocomplete="on"></input>      
+			<input class="Inputs-L" type="password" id="passwordSignUp" placeholder="Ingresa contraseña" maxlength="10"  autocomplete="current-password" required ></input>
+			<br/>
+			<a href="#" ><h5 class="simple" >¿Olvidaste tu Contraseña?</h5></a>
+			<button class="buttonL" id="register"   type="submit">Regístrar</button>
+		</div>	
+		    <h5 class="test" >Ingresa con</h5>
+          <div class="logo-container">
+            <button id= "googleButton"> 
+            <img
+             class="logo"
+             id= "googleLogo"
+             src="utilitys/img/logo-google.png"
+             alt="google-logo"
+             />
+            </button>
+            <button id= "facebookButton"> 
+             <img
+             class="logo"
+             id="facebookLogo"
+             src="utilitys/img/Fb.svg"
+             alt="facebook-logo"
+             />
+             </button>
+          </div>
+</section>
+ <Footer>
     <div class="container__footer">
+
       <div class="logo_footer">
         <img src="./utilitys/img/waves-1.gif" alt="waves">
       </div>
+
     </div>
   </Footer>
-</div> `
+</section>`
   registerDiv.innerHTML = viewRegister
   let remPassword = registerDiv.querySelector("#passwordSignUp").value;
   registerDiv.querySelector("#register").addEventListener("click", function () {
