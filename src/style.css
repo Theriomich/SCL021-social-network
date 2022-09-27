@@ -197,7 +197,7 @@ nav ul li a {
   }
 
   .parrafo {
-    font-size: 15px;
+    font-size: 20px;
     margin-top: 15%;
     margin-bottom: 5%;
     margin-right: 7%;
@@ -217,6 +217,10 @@ nav ul li a {
 
   .saludoUser {
     font-size: 15px;
+    margin-top: 15%;
+  }
+  .textarea-container{
+    margin-top: 10%;
   }
 
 }
@@ -241,9 +245,10 @@ nav ul li a {
 }
 @media only screen and (max-width: 800px) {
     .Inputs-L
-    .button{
-      font-size: 15px;
+    .button {
+      font-size: 1px;
       margin-top: 2%;
+      padding: 0.1em 0.5em;
     }
     
 }
@@ -324,7 +329,7 @@ div#captioned-gallery {
   overflow: hidden;
   text-align: center;
   align-items: center;
-  margin-left: 7%;
+  /*margin-left: 7%;*/
 }
 
 figure.slider {
@@ -553,8 +558,7 @@ REVISAR PARA RESPONSIVE
   font-family: "Astrolyte";
   height: auto;
   margin-top: 20%;
-
-  font-size:15px ; 
+  font-size:20px ; 
 
 }
 
@@ -563,6 +567,7 @@ REVISAR PARA RESPONSIVE
     width: 40rem;
     height: auto;
   }
+ 
 }
 
 .containerWall {
@@ -591,6 +596,7 @@ REVISAR PARA RESPONSIVE
   margin-left: 8%;
   margin-bottom: 2%;
 }
+
 
 #googleButton {
   border: none;
@@ -642,12 +648,17 @@ REVISAR PARA RESPONSIVE
   flex-direction: column;
   resize: none;
   background-color: #aae3eb;
+ /*background-color:rgba(111, 196, 227, 1.5);*/
   border: solid #1673A8 0.063rem;
   border-radius: 0.813rem;
   margin: 1rem;
   width: 20rem;
   height: auto;
   padding: 1rem;
+ /* color: white;*/
+  font-size: 20px;
+  font-family: "Montserrat";
+  text-align: justify;
 }
 
 .post-container {
