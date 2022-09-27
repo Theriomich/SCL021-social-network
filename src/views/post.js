@@ -37,7 +37,7 @@ import {
           </div>
         </section>
       `;
-    //let editStatus = false;
+    
 
     let templatePrintPost2 = '';
     if (element.userId === auth.currentUser.uid) {
@@ -75,12 +75,14 @@ import {
     });
   });
 
+  /*//editar
   const buttonEdit = document.querySelectorAll('#btnEdit');
   buttonEdit.forEach((item) => {
     item.addEventListener("click", async (e) => {
       try {
         const doc = await getPost (item.value);
         const post = doc.data();
+        console.log(doc.data());
         document.getElementById("postMessage").value=post.userPost;
 
         editStatus = true;
@@ -90,16 +92,32 @@ import {
         console.log(error);
       }
     });
+  });*/
+
+
+  const buttonEdit = document.querySelectorAll('#btnEdit');
+  buttonEdit.forEach((item) => {
+    item.addEventListener("click", async (e) => {
+      try {
+        const doc = await getPost (item.value);
+        console.log(item.value);
+        const post = doc.data();
+        console.log(doc.data());
+        document.getElementById("postMessage").value=post.userPost;
+
+        editStatus = true;
+        id = doc.id;
+        document.getElementById("postBtn").innerText = "Update";
+
+      } catch (error) {
+        console.log(error);
+      }
+    });
   });
-
-
-
 
  document.addEventListener("submit", async (e) => {
 e.preventDefault();
-
 const editPost= document.getElementById("postMessage").value=post.userPost;
-
 try {
   if (!editStatus) {
     await addDataPost(postMessage.value);
@@ -118,6 +136,8 @@ try {
   console.log(error);
 }
 });
+
+
 
     return containerPost;
   };

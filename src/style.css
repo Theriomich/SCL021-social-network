@@ -1,6 +1,6 @@
- /* {
+/* {
   outline: 1px solid limegreen !important;
-} */
+}*/ 
 
 * {
   padding: 0;
@@ -164,13 +164,15 @@ nav ul li a {
   flex-direction: column;
   align-items:center;
   height: 100vh;
-  background-image: url("utilitys/img/wallpaper.jpg");
+   /*background-image: url("utilitys/img/wallpaper.jpg");*/
+  background-image: url("utilitys/img/wallpaper1.jpg");
   background-size: cover;
   background-attachment: fixed;
   @import url('http://fonts.cdnfonts.com/css/astrolyte');
   font-family: 'Astrolyte', sans-serif;
-  text-shadow: 0 0 30px #fff;
+  /*text-shadow: 0 0 30px #fff;*/
   margin-top: 5%;
+  
 }
 
 .parrafo {
@@ -183,6 +185,7 @@ nav ul li a {
   margin-right: 4%;
   margin-top: 2%;
   font-family: "Montserrat";
+  background-color: rgb(59 70 184 / 30%);
 }
 
 @media only screen and (max-width: 800px) {
@@ -317,7 +320,7 @@ figure {
 }
 
 div#captioned-gallery {
-  width: 85%;
+  width: 50%;
   overflow: hidden;
   text-align: center;
   align-items: center;
@@ -340,7 +343,7 @@ figure.slider figure {
 }
 
 figure.slider img {
-  width: 30%;
+  width: 45%;
   height: auto;
   border-radius: 20px;
   object-fit: cover;
@@ -357,7 +360,9 @@ figure.slider figure figcaption {
   align-content: center;
   text-shadow: 0 0 30px rgb(244, 244, 247);
   font-weight: bolder;
+  -webkit-text-stroke: #000000;
 }
+
 
 .imageP {
   color: azure;
@@ -479,7 +484,7 @@ REVISAR PARA RESPONSIVE
             radial-gradient(ellipse at bottom, white,#0B6EFE);*/
   /*background-image: radial-gradient(white 50%, transparent 20%, #0B6EFE 10%);*/
   /*background: radial-gradient(ellipse at center, white,#0B6EFE);*/
-  background: radial-gradient(circle at center, white 10%, blue, white 50%);
+  background: radial-gradient(circle at center, white 10%, #00b6ff, white 50%);
   font-size: 13px;
 }
 
