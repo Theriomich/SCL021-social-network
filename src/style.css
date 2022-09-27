@@ -165,13 +165,15 @@
    flex-direction: column;
    align-items: center;
    height: 100%;
-   background-image: url("utilitys/img/wallpaper.jpg");
+   width: 100%;
+   background-image: url("utilitys/img/fondoinicio.jpg");
    background-size: cover;
    background-attachment: fixed;
    @import url('http://fonts.cdnfonts.com/css/astrolyte');
    font-family: 'Astrolyte', sans-serif;
    text-shadow: 0 0 30px #fff;
    margin-top: 5%;
+
  }
 
  .parrafo {
@@ -345,7 +347,7 @@
  }
 
  figure.slider img {
-   width: 45%;
+   width: 75%;
    height: auto;
    border-radius: 20px;
    object-fit: cover;
@@ -369,21 +371,47 @@
 
  @media only screen and (max-width: 750px) {
    figure.slider figure figcaption {
-     font-size: 10px
+     font-size: 15px;
+
+   }
+
+   figure.slider img {
+
+     width: 35%;
+   }
+
+   #carruContainer {
+
+     height: 37vh;
+
+   }
+
+
+
+   .container__footer {
+
+     height: 100vh;
+
    }
 
  }
 
  @media only screen and (max-width: 575px) {
    figure.slider figure figcaption {
-     font-size: 5px
+     font-size: 10px
    }
 
+   .registerContainer {
+
+     height: 100vh;
+
+   }
  }
 
  .imageP {
    color: azure;
    position: absolute;
+   text-shadow: #000000;
  }
 
  /*********************CARRUSEL*****************************************************/
@@ -730,4 +758,9 @@ REVISAR PARA RESPONSIVE
 
  .btn-delete:hover {
    cursor: pointer;
+ }
+
+ #carruContainer {
+   width: 100vh;
+   overflow: hidden;
  }

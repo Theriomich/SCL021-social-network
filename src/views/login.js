@@ -41,6 +41,7 @@ export const login = () => {
 			maxlength="30"
 			/>
 			<br/>
+      <a href="#" ><h5 class="simple" >¿Olvidaste tu Contraseña?</h5></a>
 			<button class="buttonL" id="signUp"  type="submit">
 			Login</button>
 		</div>
@@ -65,25 +66,7 @@ export const login = () => {
 		</div>
     </section>
 
-    <h5 class="test" >Ingresa con</h5>
-    <center><div class="logo-container">
-    <button id= "googleButtonL"> 
-    <img
-          class="logo"
-          id= "googleLogin"
-          src="utilitys/img/logo-google.png"
-          alt="google-logo"
-        />
-        </button>
-        <button id= "facebookButtonL"> 
-        <img
-          class="logo"
-          id="facebookLogin"
-          src="utilitys/img/Fb.svg"
-          alt="facebook-logo"
-        />
-        </button>
-    </div></center>
+  
  </div>
  <Footer>
  <div class="container__footer">

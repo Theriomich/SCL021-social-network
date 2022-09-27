@@ -89,7 +89,11 @@ const callbackPost = (post) => {
       document.getElementById("postMessage").value = post.userPost;
       editStatus = true;
       id = doc.id;
-      document.getElementById("postBtn").innerText = "Update";
+      document.getElementById("postBtn").innerText = "Update"
+      // .addEventListener("click", function () {
+      //   updatePost()
+      // })
+
 
       if (!editStatus) {
         addDataPost(postMessage.value);

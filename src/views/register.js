@@ -30,7 +30,7 @@ export const register = () => {
 			<input class="Inputs-L" type="text" id="userSignUp"  placeholder="Ingresa tu Correo"   maxlength="30"  autocomplete="on"></input>      
 			<input class="Inputs-L" type="password" id="passwordSignUp" placeholder="Ingresa contraseña" maxlength="10"  autocomplete="current-password" required ></input>
 			<br/>
-			<a href="#" ><h5 class="simple" >¿Olvidaste tu Contraseña?</h5></a>
+			
 			<button class="buttonL" id="register"   type="submit">Regístrar</button>
 		</div>	
 		    <h5 class="test" >Ingresa con</h5>
