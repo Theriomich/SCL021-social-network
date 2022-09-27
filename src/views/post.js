@@ -37,7 +37,7 @@ import {
           </div>
         </section>
       `;
-    let editStatus = false;
+    //let editStatus = false;
 
     let templatePrintPost2 = '';
     if (element.userId === auth.currentUser.uid) {
@@ -57,34 +57,68 @@ import {
   };
   post.forEach(templatesPrintPost);
 
-   // botón editar
-    const buttonEdit = document.querySelectorAll('#btnEdit');
-   buttonEdit.forEach((item) => {
-     item.addEventListener('click', async(e) => {
-       //editPost(item.value);
-   console.log("editar post")
-   console.log(item.value)
-   const doc = await getPost (item.value)
-   console.log(doc.data())
-   const post = (doc.data())
-   //containerNewPost["postMessage"].value = "post.Message";
-  //taskEdit["postMessage"].value = post.Message;
-  document.getElementById("postMessage").value=post.userPost;
-  editStatus = true; 
-  id = doc.id;
-  document.getElementById("postBtn").innerText = "Update";
- 
- if (!editStatus)  {
-    addDataPost(postMessage.value);
-   } else {
-    updatePost(id, {userPost});
-    editStatus= false; 
-   }
-   postMessage.reset();
 
-     });
-   });
-  
+  // botón de eliminar
+  const buttonDelete = document.querySelectorAll('#btnDelete');
+  buttonDelete.forEach((item) => {
+    item.addEventListener('click', () => {
+      deletePost(item.value);
+    });
+  });
+
+  // botón de dar likes
+  const likeBtn = containerPost.querySelectorAll('.btn-like');
+  likeBtn.forEach((btnL) => {
+    btnL.addEventListener('click', () => {
+      const postId = btnL.value;
+      updateLikes(postId);
+    });
+  });
+
+  const buttonEdit = document.querySelectorAll('#btnEdit');
+  buttonEdit.forEach((item) => {
+    item.addEventListener("click", async (e) => {
+      try {
+        const doc = await getPost (item.value);
+        const post = doc.data();
+        document.getElementById("postMessage").value=post.userPost;
+
+        editStatus = true;
+        id = doc.id;
+        document.getElementById("postBtn").innerText = "Update";
+      } catch (error) {
+        console.log(error);
+      }
+    });
+  });
+
+
+
+
+ document.addEventListener("submit", async (e) => {
+e.preventDefault();
+
+const editPost= document.getElementById("postMessage").value=post.userPost;
+
+try {
+  if (!editStatus) {
+    await addDataPost(postMessage.value);
+  } else {
+    await updatePost(id, {
+      postMessage:postMessage.value ,
+    });
+
+    editStatus = false;
+    id = "";
+    document.getElementById("postBtn").innerText = "Save";
+  }
+
+  postMessage.reset();
+  } catch (error) {
+  console.log(error);
+}
+});
+
     return containerPost;
   };
   

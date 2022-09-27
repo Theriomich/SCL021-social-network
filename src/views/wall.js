@@ -1,5 +1,5 @@
 import { signOutUser, addDataPost } from "../lib/firebase.js";
-import { postView } from './post.js';
+import { postView, editStatus } from './post.js';
 
 
 
@@ -36,6 +36,7 @@ export const wall = () => {
           placeholder="Comparte  tu opinión  y/o Tips"></textarea>
         </div>
        <button class="buttonL" id="postBtn" type="submit">Publicar</button>
+       <div id= "Editar"> </div>
        <!--button class="buttonL" id="logOut" type="submit">Cierre de Sesión</button-->
     </section>
     <section class= "post-container" id="postContainer">
