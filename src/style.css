@@ -342,7 +342,7 @@ figure.slider figure {
 }
 
 figure.slider img {
-  width: 75%;
+  width: 30%;
   height: auto;
   border-radius: 20px;
   object-fit: cover;
@@ -393,8 +393,10 @@ figure.slider figure figcaption {
 }
 
 #carruContainer {
-  width: 100vh;
+  width: 90vh;
   overflow: hidden;
+  margin: 0%;
+  height: auto;
 
 }
 
