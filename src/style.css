@@ -164,7 +164,8 @@ nav ul li a {
   align-items:center;
   height: 100vh;
    /*background-image: url("utilitys/img/wallpaper.jpg");*/
-  background-image: url("utilitys/img/wallpaper1.jpg");
+  /*background-image: url("utilitys/img/wallpaper1.jpg");*/
+  background-image: url("utilitys/img/fondoinicio.jpg");
   background-size: cover;
   background-attachment: fixed;
   @import url('http://fonts.cdnfonts.com/css/astrolyte');
@@ -195,7 +196,7 @@ nav ul li a {
   }
   .parrafo {
     font-size: 20px;
-    margin-top: 15%;
+    margin-top: 5%;
     margin-bottom: 5%;
     margin-right: 7%;
     margin-left: 5%;
@@ -318,11 +319,11 @@ figure {
 }
 
 div#captioned-gallery {
-  width: 50%;
-  overflow: hidden;
+  width: 85%;
+  /*overflow: hidden;*/
   text-align: center;
   align-items: center;
-  /*margin-left: 7%;*/
+  margin-left: 7%;
 }
 
 figure.slider {
@@ -341,7 +342,7 @@ figure.slider figure {
 }
 
 figure.slider img {
-  width: 45%;
+  width: 75%;
   height: auto;
   border-radius: 20px;
   object-fit: cover;
@@ -354,15 +355,13 @@ figure.slider figure figcaption {
   color: #fff;
   width: 100%;
   font-size: 13px;
-  padding: .5rem;
+ /* padding: .5rem;*/
   align-content: center;
-  text-shadow: 0 0 30px rgb(244, 244, 247);
+  /*text-shadow: 0 0 30px rgb(244, 244, 247);*/
   font-weight: bolder;
   -webkit-text-stroke: #000000;
 }
 
-
-/*New
 @media only screen and (max-width: 750px) {
    figure.slider figure figcaption {
      font-size: 15px;
@@ -374,23 +373,31 @@ figure.slider figure figcaption {
 
    #carruContainer {
      height: 37vh;
+
    }
    .container__footer {
      height: 100vh;
    }
  }
-/*NEW*/
 
-/*NEW
+
 @media only screen and (max-width: 575px) {
   figure.slider figure figcaption {
     font-size: 10px
   }
-  /*NEW*/
+  
 
 .imageP {
   color: azure;
   position: absolute;
+}
+
+#carruContainer {
+  width: 100vh;
+  overflow: hidden;
+
+}
+
 }
 
 /*********************CARRUSEL*****************************************************/
