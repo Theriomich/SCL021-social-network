@@ -1,4 +1,5 @@
 {
+  "homepage": "https://bemm12.github.io/SCL021-social-network/",
   "name": "social-network",
   "version": "1.0.0",
   "description": "Social Network @ Laboratoria",
@@ -15,7 +16,8 @@
     "stylelint": "stylelint --aei src/**/*.css",
     "pretest": "npm run htmlhint && npm run eslint && npm run stylelint",
     "test": "jest --coverage",
-    "start": "serve -s src/"
+    "start": "serve -s src/",
+    "deploy": "gh-pages -d src"
   },
   "devDependencies": {
     "@babel/core": "^7.11.4",
