@@ -156,7 +156,6 @@ nav ul li a {
   .logo.img {
     width: 100%;
   }
-
 }
 
 .containerWelcome {
@@ -172,8 +171,7 @@ nav ul li a {
   font-family: 'Astrolyte', sans-serif;
   /*text-shadow: 0 0 30px #fff;*/
   margin-top: 5%;
-  
-}
+ }
 
 .parrafo {
   font-size: 20px;
@@ -195,7 +193,6 @@ nav ul li a {
   .imageP {
     font-size: 10px;
   }
-
   .parrafo {
     font-size: 20px;
     margin-top: 15%;
@@ -209,12 +206,10 @@ nav ul li a {
   .containerWelcome {
     margin-top: 20%;
   }
-
   .titulo {
     font-size:15px;
     margin-top: 5%;
   }
-
   .saludoUser {
     font-size: 15px;
     margin-top: 15%;
@@ -222,7 +217,6 @@ nav ul li a {
   .textarea-container{
     margin-top: 10%;
   }
-
 }
 
 .button {
@@ -271,7 +265,6 @@ nav ul li a {
 .button:hover:before {
   width: 100%;
 }
-
 
 /*********************CARRUSEL*****************************************************/
 @import url(https://fonts.googleapis.com/css?family=Istok+Web);
@@ -369,6 +362,32 @@ figure.slider figure figcaption {
 }
 
 
+/*New
+@media only screen and (max-width: 750px) {
+   figure.slider figure figcaption {
+     font-size: 15px;
+   }
+
+   figure.slider img {
+     width: 35%;
+   }
+
+   #carruContainer {
+     height: 37vh;
+   }
+   .container__footer {
+     height: 100vh;
+   }
+ }
+/*NEW*/
+
+/*NEW
+@media only screen and (max-width: 575px) {
+  figure.slider figure figcaption {
+    font-size: 10px
+  }
+  /*NEW*/
+
 .imageP {
   color: azure;
   position: absolute;
@@ -382,7 +401,6 @@ figure.slider figure figcaption {
 
   color: #005FB3;
   margin-top: 2%;
-
 }
 
 .containerPages {
@@ -401,13 +419,6 @@ figure.slider figure figcaption {
   font-family: 'Astrolyte', sans-serif;
   text-shadow: 0 0 30px #fff;
 }
-
-/*@media only screen and (max-width: 800px) {
-  .containerPages,
-  .register-container,
-  .containerLogin
-REVISAR PARA RESPONSIVE
-}*/
 
 .register-container {
   display: flex;
@@ -437,9 +448,7 @@ REVISAR PARA RESPONSIVE
   cursor: pointer;
 }
 
-
 .buttonL {
-
   border-radius: 0.375rem;
   background: #0B6EFE;
   border: none;
@@ -470,13 +479,9 @@ REVISAR PARA RESPONSIVE
 }
 
 .simple {
-
-
   color: 005FB3;
   font-family: 'Astrolyte', sans-serif;
   font-size: 15px;
-
-
 }
 
 .test {
@@ -526,8 +531,6 @@ REVISAR PARA RESPONSIVE
   background-blend-mode: darken;
 }
 
-
-
 /*********WALL********/
 .wall-container {
   display: flex;
@@ -567,7 +570,6 @@ REVISAR PARA RESPONSIVE
     width: 40rem;
     height: auto;
   }
- 
 }
 
 .containerWall {
@@ -576,7 +578,6 @@ REVISAR PARA RESPONSIVE
   align-items: center;
   margin-top: 8%;
 }
-
 .user-icono {
   height: 100%;
   display: flex;
@@ -597,7 +598,6 @@ REVISAR PARA RESPONSIVE
   margin-bottom: 2%;
 }
 
-
 #googleButton {
   border: none;
   background: none;
@@ -611,7 +611,6 @@ REVISAR PARA RESPONSIVE
 #facebookButtonL {
   border: none;
   background: none;
-
 }
 
 #googleButtonL {
