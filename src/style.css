@@ -188,7 +188,7 @@
    font-family: "Montserrat";
  }
 
- @media only screen and (max-width: 800px) {
+ @ only screen and (max-width: 800px) {
    .containerLogin {
      margin-top: 40%;
    }
@@ -198,11 +198,12 @@
    }
 
    .parrafo {
-     font-size: 15px;
+     font-size: 20px;
      margin-top: 15%;
      margin-bottom: 5%;
      margin-right: 7%;
      margin-left: 5%;
+
    }
 
    .container__header {
@@ -762,5 +763,6 @@ REVISAR PARA RESPONSIVE
 
  #carruContainer {
    width: 100vh;
+
    overflow: hidden;
  }
