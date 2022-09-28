@@ -65,16 +65,12 @@ export const login = () => {
 			</button>
 		</div>
     </section>
-
-  
- </div>
- <Footer>
- <div class="container__footer">
-   <div class="logo_footer">
-     <img src="./utilitys/img/waves-1.gif" alt="">
    </div>
- </div>
-</Footer>
+   <Footer>
+   <div class="container__footer">
+      <img src="./utilitys/img/waves-1.gif" alt="">
+   </div>
+   </Footer>
 </div> `
 
   loginDiv.innerHTML = handleLogin

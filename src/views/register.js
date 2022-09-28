@@ -53,15 +53,11 @@ export const register = () => {
              </button>
           </div>
 </section>
- <Footer>
-    <div class="container__footer">
-
-      <div class="logo_footer">
-        <img src="./utilitys/img/waves-1.gif" alt="waves">
-      </div>
-
-    </div>
-  </Footer>
+<Footer>
+<div class="container__footer">
+   <img src="./utilitys/img/waves-1.gif" alt="">
+</div>
+</Footer>
 </section>`
   registerDiv.innerHTML = viewRegister
   let remPassword = registerDiv.querySelector("#passwordSignUp").value;

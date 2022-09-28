@@ -32,7 +32,7 @@ export const welcome = () => {
 	<section class="containerWelcome">
     <div class="parrafo">Bienvenidos a Social Tech, una red social de tecnología que busca la conectividad entre personas de distintas partes del mundo.</div>
       <!--base href="utilitys/img"-->
-      <div id=carruContainer>
+      <div  id= "carruContainer">
         <div id="captioned-gallery">
         <figure class="slider">
           <figure>
@@ -58,6 +58,9 @@ export const welcome = () => {
           <!--p class="imageP">Comparte contenido, agrega amigos,  postea y busca tips sobre tecnología<p-->
         </figure>			
         </figure>
+       </div>
+      </div>
+      </div>
       </div>
       </div>
       <div class="parrafo"><br>Nuestra meta es dar a conocer avances tecnologícos, programas para el uso profesional o recreativo y nuevos dispositivos para mejorar la calidad de vida y el funcionamiento de la sociedad, para que puedan compartir y conocer nuevas tecnologías de interés común.</div>

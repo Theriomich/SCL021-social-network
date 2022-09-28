@@ -17,7 +17,6 @@ import {
   FacebookAuthProvider,
   updateProfile,
 
-
 } from 'https://www.gstatic.com/firebasejs/9.9.3/firebase-auth.js';
 import {
   getFirestore,
@@ -134,9 +133,25 @@ export const updateLikes = async (id) => {
 // editar post
 export const getPost = (id) => getDoc(doc(db, 'post', id));
 
+
 //actualizar post editado
 export const updatePost = (id, newFields) =>
   updateDoc(doc(db, "post", id), newFields);
+
+// export async function editPosts(id, input) {
+//   const postEdit = doc(db, 'Post', id);
+//   await updateDoc(postEdit, {
+//     description: input,
+//   });
+// }
+/*export const updatePost = async (idPost) => {
+  //doc(refDB, "coleccion", "idDoc")
+  const postRef = doc(db, "post", idPost);
+// Set the "capital" field of the city 'DC'
+   await updateDoc(postRef, {
+    postMessage: "textoModificado"
+   });
+  }*/
 
 //Cierre de sesión
 export const signOutUser = () => {
