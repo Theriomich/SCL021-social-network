@@ -53,7 +53,9 @@ export const welcome = () => {
             <figcaption>Techonolgy in the World</figcaption>
           </figure>
           <figure>
+          
           <img src="/utilitys/img/scroll.png" alt="friends">
+          
           <figcaption>Comparte contenido, agrega amigos, <br> postea y busca tips sobre tecnología</figcaption>
           <!--p class="imageP">Comparte contenido, agrega amigos,  postea y busca tips sobre tecnología<p-->
         </figure>			

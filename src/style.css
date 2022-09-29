@@ -32,6 +32,7 @@ header {
   right: 0;
   z-index: 100;
   transition: all 300ms;
+
 }
 
 .container__header {
@@ -41,6 +42,7 @@ header {
   justify-content: space-between;
   /*margin-top: 3%; */
   margin-left: 5%;
+  margin-bottom: 3%;
 }
 
 header .logo {
@@ -180,9 +182,9 @@ nav ul li a {
   text-align: justify;
   padding: 1%;
   text-indent: 2%;
-  margin-left: 4%;
-  margin-right: 4%;
-  margin-top: 2%;
+  margin-top: 0%;
+  margin-bottom: 0%;
+  padding: 0%;
   font-family: "Montserrat";
   background-color: rgb(59 70 184 / 30%);
 }
@@ -197,9 +199,9 @@ nav ul li a {
   }
 
   .parrafo {
-    font-size: 20px;
-    margin-top: 5%;
-    margin-bottom: 5%;
+    font-size: 15px;
+    margin-top: 0%;
+
     margin-right: 7%;
     margin-left: 5%;
   }
@@ -327,7 +329,6 @@ figure {
 
 div#captioned-gallery {
   width: 85%;
-  /*overflow: hidden;*/
   text-align: center;
   align-items: center;
   margin-left: 7%;
@@ -349,7 +350,7 @@ figure.slider figure {
 }
 
 figure.slider img {
-  width: 30%;
+  width: 42%;
   height: auto;
   border-radius: 20px;
   object-fit: cover;
@@ -361,7 +362,7 @@ figure.slider figure figcaption {
   bottom: 0;
   color: #fff;
   width: 100%;
-  font-size: 13px;
+  font-size: 14px;
   /* padding: .5rem;*/
   align-content: center;
   /*text-shadow: 0 0 30px rgb(244, 244, 247);*/
@@ -369,17 +370,39 @@ figure.slider figure figcaption {
   -webkit-text-stroke: #000000;
 }
 
-@media only screen and (max-width: 750px) {
+@media screen and (max-width: 890px) {
   figure.slider figure figcaption {
-    font-size: 15px;
+    font-size: 11px;
   }
 
   figure.slider img {
-    width: 35%;
+    width: 40%;
+  }
+
+  .parrafo {
+    margin: 0%;
+  }
+}
+
+
+@media only screen and (max-width: 750px) {
+  figure.slider figure figcaption {
+    font-size: 11px;
+  }
+
+
+  .parrafo {
+    font-size: 13px;
+  }
+
+
+
+  figure.slider img {
+    width: 50%;
   }
 
   #carruContainer {
-    height: 37vh;
+    height: 40vh;
 
   }
 
@@ -391,13 +414,22 @@ figure.slider figure figcaption {
 
 @media only screen and (max-width: 575px) {
   figure.slider figure figcaption {
-    font-size: 10px
+    font-size: 12px
   }
 
+  figure.slider img {
+    width: 45%;
+  }
 
   .imageP {
     color: azure;
     position: absolute;
+  }
+
+  .parrafo {
+    margin-top: 15%;
+    margin-bottom: 15%;
+    font-size: 18px;
   }
 
   #carruContainer {
@@ -742,3 +774,11 @@ figure.slider figure figcaption {
 .btn-delete:hover {
   cursor: pointer;
 }
+
+#carruContainer {
+  overflow: hidden;
+}
+
+/* #bluRed img {
+  filter: blur(100px)
+} */
