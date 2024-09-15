@@ -3,6 +3,7 @@
 Technology Red Social, está orientada para los amantes de la tecnología, a fin de dar a conocer avances tecnológicos, información de programas para el uso profesional o recreativo, así como también información de los nuevos dispositivos que  mejoran la calidad de vida y el funcionamiento de la sociedad.
 
 # Aquí puedes ver nuestro proyecto:
+https://bemm12.github.io/SCL021-social-network/
 
 # HISTORIA DE USUARIOS:
 
